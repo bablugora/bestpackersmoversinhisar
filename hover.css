@@ -1,0 +1,61 @@
+1. (Button ke andar se rang nikalna (Fill Effect)
+Website par aapne dhyan diya hoga, button par mouse le jaate hi ek naya rang andar se slide hokar poore button par phail jata hai.
+
+Kaise hoga: Isme button ke :before ya :after (pseudo-elements) par rang chhipa kar rakha jata hai, aur :hover hote hi uski width ya height 100% kar di jaati hai.)
+.btn {
+  position: relative;
+  overflow: hidden; /* Bahar ka rang chhipane ke liye */
+  color: white;
+  background: #ff5e14; /* Orange color */
+  transition: 0.4s;
+}
+/* Ek chhupa hua parda button ke andar */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; /* Pehle ye baayein taraf chhipa hai */
+  width: 100%; height: 100%;
+  background: #111111; /* Black color */
+  transition: 0.4s;
+  z-index: -1;
+}
+/* Jaise hi mouse aayega, parda andar slide karega */
+.btn:hover::before {
+  left: 0;
+}
+
+2. (Service Card ke andar ka icon/text upar uthna
+Jab aap unke services wale cards (jaise Logistics, Warehousing) par mouse le jaate ho, toh card thoda upar uthta hai aur andar ka icon ya text bhi thoda hilta hai.
+
+Kaise hoga: Parent element par hover karne se child element ko hilana.)
+.service-card {
+  background: white;
+  transition: 0.3s;
+}
+/* Card par mouse aate hi card upar uthega aur shadow aayegi */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/* Card par mouse aate hi andar ka icon ghomega */
+.service-card:hover .icon {
+  transform: rotateY(180deg); /* 3D flip effect */
+}
+3. (Image ke upar color ka parda aana (Overlay Effect)
+Website ke blog ya portfolio section mein, image par mouse le jaate hi uspar ek transparent dark ya orange rang ka parda aa jata hai aur ek button dikhne lagta hai.
+
+Kaise hoga: Pehle se ek overlay div bana kar uski opacity: 0 rakhte hain, aur :hover par 1 kar dete hain.)
+.image-box {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 94, 20, 0.8); /* Orange transparent */
+  opacity: 0; /* Pehle gayab rahega */
+  transition: 0.4s;
+}
+/* Mouse aate hi parda dikhne lagega */
+.image-box:hover .overlay {
+  opacity: 1;
+}

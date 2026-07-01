@@ -21,7 +21,7 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 10px;
-    background: rgba(107, 145, 110, 0.75); 
+    background: rgba(237, 237, 179, 0.75); 
 }
 
 
@@ -90,113 +90,92 @@ body {
     position: relative;
     z-index: 1;
 }
-.one{
+.one {
     width: 100%;
-    min-width: none;
-    height: 100%;
-    min-height: 300px;
-    margin:20px auto;
-    padding: 20px 0;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.one span{
-    font-size: 35px;
-}
-.one b{
-    text-shadow: 0 0 10px red;
-}
-.one p{
-    padding: 20px;
-    line-height: 38px;
-}
-.two {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 40px auto;
-    padding: 20px 0;
-}
-
-.two-one {
-    width: 45%;
+    height: auto;
+    box-sizing: border-box;
     text-align: center;
 }
 
-.two-one p {
+.one p {
     padding: 20px;
     line-height: 25px;
 } 
-
-.two-one .imgone {
-    width: 100%;
-    min-width: 350px;
-    height: 100%;
-    min-height: 250px;
+.one-one{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}
+.one-one .imgone {
+    width: 75%;
+    height:auto;
     object-fit: cover;
     border-radius: 20%;
     border: 3px solid #ff5e14;
     margin-top: 15px;
 }
+.two {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f8f9fa; */
+    padding:60px 20px;
+}
 
-.two-two {
-    width: 45%;
+
+.two-one  {
+    max-width: 900px;
+    background-color: #ebe5e5;
+    padding:40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
+} 
+.two-oneh2{
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
-
-.two-two p {
-    line-height: 25px;
-    font-family: 'Arial Narrow', Arial, sans-serif;
+.two-one .highlight-text{
+    color: #ff6b6b;
 }
-
-.two-two-one {
-    width: 100%;
-    padding: 20px 0;
+.two-one .arrow{
+    color: #555;
+    margin: 0 10px;
 }
-
-.two-two-one .img {
-    width: 50px;
-    height: 50px;
-    margin: 0 -10px; 
-    border-radius: 50%;
-    border: 2px solid orange;
-    object-fit: cover;
+.two-one-p, .two-one-pp{
+    font-size: 17px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
-
-.two-two-one h2 { padding: 10px 0; }
-.two-two-one h3 { padding-bottom: 10px; }
-
-.two-two-one button {
-    margin: 10px auto;
-    padding: 12px 30px;
-    transition: 0.6s;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    color: white;
-    background-color: orange;
-    border: 0;
-    border-radius: 30px;
+.two-one-pp strong{
+    color: #222;
+    background-color: #fff4f4;
+    padding: 2px 5px;
+    border-radius: 4px;
 }
-
-.two-two-one button::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    transition: 0.6s;
-    background-color: #111111;
-    top: 0;
-    left: -100%;
+.two-one .cta-container{
+    margin-top: 30px;
 }
-
-.two-two-one button:hover::before { left: 0; }
-.two-two-one button span {
-    position: relative;
+.two-one .book-now-btn{
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #c0392b);
+    color: #ffffff;
+    padding: 15px 35px;
     font-size: 18px;
-    z-index: 1;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+    transition: all 0.3s ease;
+}
+.book-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
 }
 
 .three {
@@ -549,19 +528,14 @@ body {
 .nine {
     width: 100%;
     overflow: hidden;
-    background: #f89364;
+    /* background: #f89364; */
     padding: 15px 0;
-    color: white;
-    box-shadow: 0 0 20px red;
+    color: rgb(66, 202, 120);
+    text-shadow: 0 10px 20px black;
     border-radius: 10%;
+    /* transform: translateY(-175px); */
 }
-
-.ticker-wrap {
-    width: 100%;
-    display: flex;
-}
-
-.ticker-item {
+.nine-one {
     white-space: nowrap;
     font-size: 48px;
     font-weight: bold;
@@ -572,7 +546,7 @@ body {
     0% { transform: translate3d(100%, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
 }
-.ticker-item ion-icon{
+.nine-one ion-icon{
     transform: translateY(10px);
 }
 

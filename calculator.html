@@ -1,457 +1,492 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WKDCH Packers & Movers Calculator</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Willkommen Packers Movers Cost Calculator</title>
     <!-- FontAwesome Premium Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
 
-        body {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
+      body {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 40px 20px;
+        min-height: 100vh;
+      }
 
-        .inventory-wrapper {
-            max-width: 850px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
-            padding: 40px;
-        }
+      .inventory-wrapper {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+        padding: 40px;
+      }
 
-        .inventory-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+      .inventory-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-        .inventory-header h2 {
-            color: #0f172a;
-            font-size: 30px;
-            font-weight: 800;
-        }
+      .inventory-header h2 {
+        color: #0f172a;
+        font-size: 30px;
+        font-weight: 800;
+      }
 
-        .inventory-header p {
-            color: #64748b;
-            font-size: 15px;
-            margin-top: 5px;
-        }
+      .inventory-header p {
+        color: #64748b;
+        font-size: 15px;
+        margin-top: 5px;
+      }
 
-        .category-section {
-            margin-bottom: 35px;
-        }
+      .category-section {
+        margin-bottom: 35px;
+      }
 
-        .category-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #4f46e5;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+      .category-title {
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #4f46e5;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-        .category-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #e2e8f0;
-        }
+      .category-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #e2e8f0;
+      }
 
-        /* Items Stack Layout for Dynamic Dropdowns */
-        .items-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+      /* Items Stack Layout for Dynamic Dropdowns */
+      .items-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-        .item-row {
-            background: #ffffff;
-            border: 2px solid #f1f5f9;
-            border-radius: 16px;
-            padding: 18px 22px;
-            transition: all 0.3s ease;
-        }
+      .item-row {
+        background: #ffffff;
+        border: 2px solid #f1f5f9;
+        border-radius: 16px;
+        padding: 18px 22px;
+        transition: all 0.3s ease;
+      }
 
-        .item-main-ui {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+      .item-main-ui {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-        .item-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+      .item-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
 
-        .item-icon {
-            width: 44px;
-            height: 44px;
-            background: #f8fafc;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: #64748b;
-            transition: all 0.3s;
-        }
+      .item-icon {
+        width: 44px;
+        height: 44px;
+        background: #f8fafc;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #64748b;
+        transition: all 0.3s;
+      }
 
-        .item-name {
-            font-size: 16px;
-            color: #334155;
-            font-weight: 600;
-        }
+      .item-name {
+        font-size: 16px;
+        color: #334155;
+        font-weight: 600;
+      }
 
-        /* Counter Elements */
-        .counter-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #f1f5f9;
-            border-radius: 10px;
-            padding: 4px;
-        }
+      /* Counter Elements */
+      .counter-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #f1f5f9;
+        border-radius: 10px;
+        padding: 4px;
+      }
 
-        .btn-counter {
-            width: 30px;
-            height: 30px;
-            border: none;
-            background: #ffffff;
-            color: #0f172a;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-        }
+      .btn-counter {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: #ffffff;
+        color: #0f172a;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+      }
 
-        .count-value {
-            font-size: 15px;
-            font-weight: 700;
-            min-width: 20px;
-            text-align: center;
-        }
+      .count-value {
+        font-size: 15px;
+        font-weight: 700;
+        min-width: 20px;
+        text-align: center;
+      }
 
-        /* Active Item Card Styling */
-        .item-row.active {
-            border-color: #4f46e5;
-            background: #fcfcff;
-        }
+      /* Active Item Card Styling */
+      .item-row.active {
+        border-color: #4f46e5;
+        background: #fcfcff;
+      }
 
-        .item-row.active .item-icon {
-            background: #4f46e5;
-            color: #ffffff;
-        }
+      .item-row.active .item-icon {
+        background: #4f46e5;
+        color: #ffffff;
+      }
 
-        /* Advanced Dynamic Dropdown Spec Box */
-        .spec-dropdown-box {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #e2e8f0;
-            display: none; /* JS इसे ओपन करेगा */
-            animation: fadeIn 0.3s ease;
-        }
+      /* Advanced Dynamic Dropdown Spec Box */
+      .spec-dropdown-box {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px dashed #e2e8f0;
+        display: none; /* JS इसे ओपन करेगा */
+        animation: fadeIn 0.3s ease;
+      }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-5px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        .spec-dropdown-box label {
-            font-size: 13px;
-            font-weight: 700;
-            color: #475569;
-            margin-bottom: 6px;
-            display: block;
-        }
+      .spec-dropdown-box label {
+        font-size: 13px;
+        font-weight: 700;
+        color: #475569;
+        margin-bottom: 6px;
+        display: block;
+      }
 
-        .spec-select {
-            width: 100%;
-            max-width: 300px;
-            padding: 10px 14px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 14px;
-            color: #1e293b;
-            outline: none;
-            background-color: #ffffff;
-            font-weight: 600;
-            cursor: pointer;
-        }
+      .spec-select {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px 14px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 14px;
+        color: #1e293b;
+        outline: none;
+        background-color: #ffffff;
+        font-weight: 600;
+        cursor: pointer;
+      }
 
-        .spec-select:focus {
-            border-color: #4f46e5;
-        }
+      .spec-select:focus {
+        border-color: #4f46e5;
+      }
 
-        /* Address Box */
-        .address-box {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px dashed #e2e8f0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+      /* Address Box */
+      .address-box {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 2px dashed #e2e8f0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
 
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
 
-        .input-group label {
-            font-size: 14px;
-            font-weight: 700;
-            color: #475569;
-        }
+      .input-group label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #475569;
+      }
 
-        .input-group input {
-            padding: 12px 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 15px;
-            outline: none;
-            background: #f8fafc;
-        }
+      .input-group input {
+        padding: 12px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 15px;
+        outline: none;
+        background: #f8fafc;
+      }
 
-        .input-group input:focus {
-            border-color: #4f46e5;
-            background: #ffffff;
-        }
+      .input-group input:focus {
+        border-color: #4f46e5;
+        background: #ffffff;
+      }
 
-        /* CTA Button */
-        .submit-container {
-            margin-top: 35px;
-            text-align: center;
-        }
+      /* CTA Button */
+      .submit-container {
+        margin-top: 35px;
+        text-align: center;
+      }
 
-        .btn-submit {
-            background: #25d366;
-            color: white;
-            border: none;
-            padding: 16px 36px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s ease;
-        }
+      .btn-submit {
+        background: #25d366;
+        color: white;
+        border: none;
+        padding: 16px 36px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.2s ease;
+      }
 
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            background: #20ba5a;
-        }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        background: #20ba5a;
+      }
     </style>
-</head>
-<body>
-
-<div class="inventory-wrapper">
-    <div class="inventory-header">
+  </head>
+  <body>
+    <div class="inventory-wrapper">
+      <div class="inventory-header">
         <h2>Smart Shifting Calculator</h2>
         <p>सही कोटेशन के लिए अपने सामान का सटीक साइज और संख्या चुनें</p>
-    </div>
+      </div>
 
-    <!-- Section: Items -->
-    <div class="category-section">
+      <!-- Section: Items -->
+      <div class="category-section">
         <div class="category-title">Select Items & Specifications</div>
         <div class="items-stack">
-            
-            <!-- Item 1: Smart TV -->
-            <div class="item-row" id="row-tv">
-                <div class="item-main-ui">
-                    <div class="item-info">
-                        <div class="item-icon"><i class="fa-solid fa-tv"></i></div>
-                        <span class="item-name">Smart Television (TV)</span>
-                    </div>
-                    <div class="counter-box">
-                        <button class="btn-counter" onclick="updateItem('tv', -1)">-</button>
-                        <span class="count-value" id="tv">0</span>
-                        <button class="btn-counter" onclick="updateItem('tv', 1)">+</button>
-                    </div>
-                </div>
-                <!-- Dynamic Dropdown Options Section -->
-                <div class="spec-dropdown-box" id="spec-box-tv">
-                    <label>TV का स्क्रीन साइज चुनें:</label>
-                    <select class="spec-select" id="size-tv">
-                        <option value="32 Inch">32 Inch (Small)</option>
-                        <option value="43 Inch">43 Inch (Medium)</option>
-                        <option value="55 Inch">55 Inch (Large)</option>
-                        <option value="65 Inch+">65 Inch या उससे बड़ा (Ultra Large)</option>
-                    </select>
-                </div>
+          <!-- Item 1: Smart TV -->
+          <div class="item-row" id="row-tv">
+            <div class="item-main-ui">
+              <div class="item-info">
+                <div class="item-icon"><i class="fa-solid fa-tv"></i></div>
+                <span class="item-name">Smart Television (TV)</span>
+              </div>
+              <div class="counter-box">
+                <button class="btn-counter" onclick="updateItem('tv', -1)">
+                  -
+                </button>
+                <span class="count-value" id="tv">0</span>
+                <button class="btn-counter" onclick="updateItem('tv', 1)">
+                  +
+                </button>
+              </div>
             </div>
-
-            <!-- Item 2: Sofa Set -->
-            <div class="item-row" id="row-sofa">
-                <div class="item-main-ui">
-                    <div class="item-info">
-                        <div class="item-icon"><i class="fa-solid fa-couch"></i></div>
-                        <span class="item-name">Sofa Set</span>
-                    </div>
-                    <div class="counter-box">
-                        <button class="btn-counter" onclick="updateItem('sofa', -1)">-</button>
-                        <span class="count-value" id="sofa">0</span>
-                        <button class="btn-counter" onclick="updateItem('sofa', 1)">+</button>
-                    </div>
-                </div>
-                <div class="spec-dropdown-box" id="spec-box-sofa">
-                    <label>सोफे का प्रकार (Seater Type) चुनें:</label>
-                    <select class="spec-select" id="size-sofa">
-                        <option value="Single Seater (1)">Single Seater Chair</option>
-                        <option value="3 Seater (3)">3 Seater Sofa</option>
-                        <option value="3+1 Seater">3 + 1 Seater Set</option>
-                        <option value="3+2 Seater">3 + 2 Seater Set</option>
-                        <option value="5 Seater Full Set">5 Seater Complete Set</option>
-                        <option value="L-Shape Luxury Sofa">L-Shape Corner Sofa</option>
-                    </select>
-                </div>
+            <!-- Dynamic Dropdown Options Section -->
+            <div class="spec-dropdown-box" id="spec-box-tv">
+              <label>TV का स्क्रीन साइज चुनें:</label>
+              <select class="spec-select" id="size-tv">
+                <option value="32 Inch">32 Inch (Small)</option>
+                <option value="43 Inch">43 Inch (Medium)</option>
+                <option value="55 Inch">55 Inch (Large)</option>
+                <option value="65 Inch+">
+                  65 Inch या उससे बड़ा (Ultra Large)
+                </option>
+              </select>
             </div>
+          </div>
 
-            <!-- Item 3: Dining Table -->
-            <div class="item-row" id="row-dining">
-                <div class="item-main-ui">
-                    <div class="item-info">
-                        <div class="item-icon"><i class="fa-solid fa-chair"></i></div>
-                        <span class="item-name">Dining Table</span>
-                    </div>
-                    <div class="counter-box">
-                        <button class="btn-counter" onclick="updateItem('dining', -1)">-</button>
-                        <span class="count-value" id="dining">0</span>
-                        <button class="btn-counter" onclick="updateItem('dining', 1)">+</button>
-                    </div>
-                </div>
-                <div class="spec-dropdown-box" id="spec-box-dining">
-                    <label>कुर्सियों की संख्या (No. of Chairs):</label>
-                    <select class="spec-select" id="size-dining">
-                        <option value="2 Chairs Table">2 Chairs Table</option>
-                        <option value="4 Chairs Table">4 Chairs Table</option>
-                        <option value="6 Chairs Table">6 Chairs Table</option>
-                        <option value="8 Chairs Table">8 Chairs Table</option>
-                        <option value="Only Glass Table Top (No Chairs)">सिर्फ टेबल (बिना कुर्सियों के)</option>
-                    </select>
-                </div>
+          <!-- Item 2: Sofa Set -->
+          <div class="item-row" id="row-sofa">
+            <div class="item-main-ui">
+              <div class="item-info">
+                <div class="item-icon"><i class="fa-solid fa-couch"></i></div>
+                <span class="item-name">Sofa Set</span>
+              </div>
+              <div class="counter-box">
+                <button class="btn-counter" onclick="updateItem('sofa', -1)">
+                  -
+                </button>
+                <span class="count-value" id="sofa">0</span>
+                <button class="btn-counter" onclick="updateItem('sofa', 1)">
+                  +
+                </button>
+              </div>
             </div>
-
-            <!-- Item 4: Refrigerator -->
-            <div class="item-row" id="row-fridge">
-                <div class="item-main-ui">
-                    <div class="item-info">
-                        <div class="item-icon"><i class="fa-solid fa-kitchen-set"></i></div>
-                        <span class="item-name">Refrigerator (Fridge)</span>
-                    </div>
-                    <div class="counter-box">
-                        <button class="btn-counter" onclick="updateItem('fridge', -1)">-</button>
-                        <span class="count-value" id="fridge">0</span>
-                        <button class="btn-counter" onclick="updateItem('fridge', 1)">+</button>
-                    </div>
-                </div>
-                <div class="spec-dropdown-box" id="spec-box-fridge">
-                    <label>फ्रिज का प्रकार चुनें:</label>
-                    <select class="spec-select" id="size-fridge">
-                        <option value="Single Door">Single Door (Small)</option>
-                        <option value="Double Door">Double Door (Medium)</option>
-                        <option value="Side-by-Side Door">Side-by-Side Triple Door (Large)</option>
-                    </select>
-                </div>
+            <div class="spec-dropdown-box" id="spec-box-sofa">
+              <label>सोफे का प्रकार (Seater Type) चुनें:</label>
+              <select class="spec-select" id="size-sofa">
+                <option value="Single Seater (1)">Single Seater Chair</option>
+                <option value="3 Seater (3)">3 Seater Sofa</option>
+                <option value="3+1 Seater">3 + 1 Seater Set</option>
+                <option value="3+2 Seater">3 + 2 Seater Set</option>
+                <option value="5 Seater Full Set">5 Seater Complete Set</option>
+                <option value="L-Shape Luxury Sofa">L-Shape Corner Sofa</option>
+              </select>
             </div>
+          </div>
 
+          <!-- Item 3: Dining Table -->
+          <div class="item-row" id="row-dining">
+            <div class="item-main-ui">
+              <div class="item-info">
+                <div class="item-icon"><i class="fa-solid fa-chair"></i></div>
+                <span class="item-name">Dining Table</span>
+              </div>
+              <div class="counter-box">
+                <button class="btn-counter" onclick="updateItem('dining', -1)">
+                  -
+                </button>
+                <span class="count-value" id="dining">0</span>
+                <button class="btn-counter" onclick="updateItem('dining', 1)">
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="spec-dropdown-box" id="spec-box-dining">
+              <label>कुर्सियों की संख्या (No. of Chairs):</label>
+              <select class="spec-select" id="size-dining">
+                <option value="2 Chairs Table">2 Chairs Table</option>
+                <option value="4 Chairs Table">4 Chairs Table</option>
+                <option value="6 Chairs Table">6 Chairs Table</option>
+                <option value="8 Chairs Table">8 Chairs Table</option>
+                <option value="Only Glass Table Top (No Chairs)">
+                  सिर्फ टेबल (बिना कुर्सियों के)
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Item 4: Refrigerator -->
+          <div class="item-row" id="row-fridge">
+            <div class="item-main-ui">
+              <div class="item-info">
+                <div class="item-icon">
+                  <i class="fa-solid fa-kitchen-set"></i>
+                </div>
+                <span class="item-name">Refrigerator (Fridge)</span>
+              </div>
+              <div class="counter-box">
+                <button class="btn-counter" onclick="updateItem('fridge', -1)">
+                  -
+                </button>
+                <span class="count-value" id="fridge">0</span>
+                <button class="btn-counter" onclick="updateItem('fridge', 1)">
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="spec-dropdown-box" id="spec-box-fridge">
+              <label>फ्रिज का प्रकार चुनें:</label>
+              <select class="spec-select" id="size-fridge">
+                <option value="Single Door">Single Door (Small)</option>
+                <option value="Double Door">Double Door (Medium)</option>
+                <option value="Side-by-Side Door">
+                  Side-by-Side Triple Door (Large)
+                </option>
+              </select>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Address Area Inputs -->
-    <div class="address-box">
+      <!-- Address Area Inputs -->
+      <div class="address-box">
         <div class="input-group">
-            <label for="from-city">Moving From:</label>
-            <input type="text" id="from-city" placeholder="e.g. Sector 4, Bengaluru">
+          <label for="from-city">Moving From:</label>
+          <input
+            type="text"
+            id="from-city"
+            placeholder="e.g. Sector 4, Bengaluru"
+          />
         </div>
         <div class="input-group">
-            <label for="to-city">Moving To:</label>
-            <input type="text" id="to-city" placeholder="e.g. Tosham, Haryana">
+          <label for="to-city">Moving To:</label>
+          <input type="text" id="to-city" placeholder="e.g. Tosham, Haryana" />
         </div>
-    </div>
+      </div>
 
-    <!-- Submit CTA Row -->
-    <div class="submit-container">
+      <!-- Submit CTA Row -->
+      <div class="submit-container">
         <button class="btn-submit" onclick="sendToWhatsApp()">
-            <i class="fa-brands fa-whatsapp"></i> Get Accurate Quote on WhatsApp
+          <i class="fa-brands fa-whatsapp"></i> Get Accurate Quote on WhatsApp
         </button>
+      </div>
     </div>
-</div>
 
-<script>
-    function updateItem(id, change) {
+    <script>
+      function updateItem(id, change) {
         const countElement = document.getElementById(id);
-        const rowElement = document.getElementById('row-' + id);
-        const specBox = document.getElementById('spec-box-' + id);
-        
+        const rowElement = document.getElementById("row-" + id);
+        const specBox = document.getElementById("spec-box-" + id);
+
         let currentCount = parseInt(countElement.innerText);
         currentCount += change;
-        
+
         if (currentCount < 0) return;
-        
+
         countElement.innerText = currentCount;
 
         // Smart UI Logic: जब संख्या 0 से ज्यादा हो तभी ड्रॉपडाउन दिखेगा
         if (currentCount > 0) {
-            rowElement.classList.add('active');
-            if(specBox) specBox.style.display = 'block';
+          rowElement.classList.add("active");
+          if (specBox) specBox.style.display = "block";
         } else {
-            rowElement.classList.remove('active');
-            if(specBox) specBox.style.display = 'none';
+          rowElement.classList.remove("active");
+          if (specBox) specBox.style.display = "none";
         }
-    }
+      }
 
-    function sendToWhatsApp() {
-        const itemIds = ['tv', 'sofa', 'dining', 'fridge'];
+      function sendToWhatsApp() {
+        const itemIds = ["tv", "sofa", "dining", "fridge"];
         const itemNames = {
-            'tv': 'Smart TV',
-            'sofa': 'Sofa Set',
-            'dining': 'Dining Table',
-            'fridge': 'Refrigerator'
+          tv: "Smart TV",
+          sofa: "Sofa Set",
+          dining: "Dining Table",
+          fridge: "Refrigerator",
         };
 
-        const fromCity = document.getElementById('from-city').value.trim();
-        const toCity = document.getElementById('to-city').value.trim();
+        const fromCity = document.getElementById("from-city").value.trim();
+        const toCity = document.getElementById("to-city").value.trim();
 
         let itemListText = "";
         let totalItemsCount = 0;
 
-        itemIds.forEach(id => {
-            const count = parseInt(document.getElementById(id).innerText);
-            if (count > 0) {
-                totalItemsCount += count;
-                // ड्रॉपडाउन से सिलेक्टेड वैल्यू (जैसे 65 inch या 3+2 Seater) उठाना
-                const specValue = document.getElementById('size-' + id).value;
-                itemListText += `✅ ${itemNames[id]} x ${count} [Size/Type: ${specValue}]\n`;
-            }
+        itemIds.forEach((id) => {
+          const count = parseInt(document.getElementById(id).innerText);
+          if (count > 0) {
+            totalItemsCount += count;
+            // ड्रॉपडाउन से सिलेक्टेड वैल्यू (जैसे 65 inch या 3+2 Seater) उठाना
+            const specValue = document.getElementById("size-" + id).value;
+            itemListText += `✅ ${itemNames[id]} x ${count} [Size/Type: ${specValue}]\n`;
+          }
         });
 
         if (totalItemsCount === 0) {
-            alert("कृपया कम से कम 1 सामान जरूर चुनें!");
-            return;
+          alert("कृपया कम से कम 1 सामान जरूर चुनें!");
+          return;
         }
 
         if (fromCity === "" || toCity === "") {
-            alert("कृपया दोनों एड्रेस लोकेशन भरें!");
-            return;
+          alert("कृपया दोनों एड्रेस लोकेशन भरें!");
+          return;
         }
 
         // WhatsApp Custom Message Blueprint
@@ -464,11 +499,13 @@
         message += `कृपया इस सटीक साइज लिस्ट के हिसाब से मुझे कोटेशन भेजें।`;
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappNumber = "917082814430"; // Your business phone number
-        
-        window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`, '_blank');
-    }
-</script>
+        const whatsappNumber = "918073025732"; // Your business phone number
 
-</body>
+        window.open(
+          `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`,
+          "_blank",
+        );
+      }
+    </script>
+  </body>
 </html>

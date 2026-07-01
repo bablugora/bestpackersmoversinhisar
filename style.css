@@ -549,11 +549,11 @@ body {
 .nine {
     width: 100%;
     overflow: hidden;
-    background: #ff5e14;
+    background: #f89364;
     padding: 15px 0;
     color: white;
     box-shadow: 0 0 20px red;
-    border-radius: 100%;
+    border-radius: 10%;
 }
 
 .ticker-wrap {
@@ -577,6 +577,7 @@ body {
 }
 
 .footer {
+    
     width: 100%;
     display: flex;
     justify-content: space-around;

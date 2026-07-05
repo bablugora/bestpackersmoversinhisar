@@ -33,32 +33,27 @@ body {
     padding: 15px 0;
     font-size: 20px;
 }
-
-.baar {
-    width: 48%;
-    /* background-color: rgba(0, 0, 0, 0.05);    */
+.baar-logo {
+    width: 30%;
     padding: 10px 20px; 
     border-radius: 8px;
+    text-align: center;
 }
+.baar-logo img{
+    width: 8%;
+    height: auto;
+    border-radius: 100%;
+    box-shadow: 0 0 18px rgb(255, 0, 0);
 
-.baar p {
-    color: #111;
 }
-
-.baar a {
-    text-decoration: none;
-    padding: 0 20px;
-    color: #111;
-    transition: 0.3s;
+.baar-btn{
+    width: 65%;
+    height: auto;
+    margin: auto;
+    text-align: end;
 }
-
-.baar a:hover {
-    color: #ff5e14; 
-}
-
-
 .btn {
-    width: 70%;
+    width: 100%;
     
     position: relative;
     overflow: hidden;
@@ -71,8 +66,6 @@ body {
     transition: 0.6s;
     border-radius: 30px;
 }
-
-
 .btn::before {
     content: '';
     position: absolute;

@@ -51,7 +51,7 @@ body {
 
 }
 .baar-links {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -68,10 +68,10 @@ body {
     color: #ff5e14;
 }
 .baar-btn{
-    width: 20%;
+    width: 100%;
     height: auto;
-    margin: auto;
-    text-align: end;
+    margin:20px auto;
+    
 }
 .btn {
     width: 100%;

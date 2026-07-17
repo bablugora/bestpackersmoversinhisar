@@ -36,14 +36,14 @@ body {
     position: relative;
 }
 .baar-logo {
-    width: 30%;
+    width: 20%;
     padding: 10px 20px; 
     border-radius: 8px;
     text-align: center;
     
 }
 .baar-logo img{
-    width: 15%;
+    width: 20%;
     height: auto;
     border-radius: 100%;
     box-shadow: 0 0 18px rgb(255, 0, 0);
@@ -58,8 +58,17 @@ body {
     list-style: none;
     gap: 20px;
 }
+.baar-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.baar-links a:hover{
+    color: #ff5e14;
+}
 .baar-btn{
-    width: 65%;
+    width: 20%;
     height: auto;
     margin: auto;
     text-align: end;
@@ -417,6 +426,7 @@ body {
 
 .seven {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -426,6 +436,7 @@ body {
 
 .seven-one {
     width: 45%;
+    height: auto;
     position: relative;
 }
 
@@ -488,9 +499,14 @@ body {
 
 .eight-one {
     width: 45%;
+    height: auto;
+    padding: 20px 0;
 }
 
-.eight-one h2 { color: #ff5e14; margin: 10px 0; }
+.eight-one h2 { 
+    color: #ff5e14; 
+    margin: 10px 0;
+}
 
 .eight-one h3 {
     background-color: #ff5e14;

@@ -637,6 +637,7 @@ body {
 
 .footer-one h2 { margin-bottom: 15px; color: #111; }
 .footer-one p { line-height: 24px; color: #666; }
+.footer-one h3 { margin-top: 20px; color: #ff5e14; font-size: 18px; }
 
 .social-links a {
     font-size: 30px;

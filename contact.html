@@ -5,67 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Packers Movers in Hisar: Willkommen Packers Movers</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ionicons standard utility fonts images ke bina icon lagane ke liye (Agar CSS me icons use ho rahe hain) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
+
     <div class="main-container">
-      <div class="navbar">
-        <div class="baar-logo">
-        <img src="image/willkommen packers movers logo1.png" alt=""> 
+        
+        <!-- 1. Navbar Section Fixes -->
+        <div class="navbar">
+            <div class="baar-logo">
+                <img src="image/willkommen packers movers logo1.png" alt="Willkommen Packers Movers Logo"> 
+            </div>
+            <div class="baar-links">
+                <ul> <!-- UL Tag missing tha, add kar diya -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://willkommenpackersmovers.blogspot.com/" target="_blank">Blog</a></li>
+                </ul>
+            </div> 
+            
+            <div class="baar-btn">
+                <a href="quotation.html" target="_blank">
+                    <button class="btn">
+                        <span>Get Free Quotation &nbsp; &#10148;</span>
+                    </button>
+                </a>
+            </div>
         </div>
-         <div class="baar-links">
-      
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://willkommenpackersmovers.blogspot.com/" target="_blank">Blog</a></li>
-       </div> 
-       
-        <div class="baar-btn">
-          <a href="quotation.html" target="_blank">
-            <button class="btn">
-              <span>Get Free Quotation &nbsp; &#10148;</span>
-              
-            </button>
-          </a>
+
+        <!-- 2. Ticker/Marquee Info Bar -->
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            Get Your Free Quote Now! Call Us At +91 8073025732 &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; Reliable & Safe Shifting Services in Hisar!
+        </marquee>
+
+        <!-- 3. Hero Section -->
+        <div class="one">
+            <section class="hero-section">
+                <h1>Best Packers and Movers in Hisar <br><span>Willkommen Packers Movers</span></h1>
+                <p>Ghar ya office shifting ab hui aasan aur surakshit. Turant free quotation paane ke liye sampark karein.</p>
+                <p><strong>Call Us: +91 8073025732</strong></p>
+            </section>
+            <div class="one-one">
+                <img class="imgone" src="image/sifting.png" alt="Moving Contact Logistics" />
+            </div>
         </div>
-      </div>
-      <marquee behavior="left" direction="left">Get Your Free Quote Now! Call Us At +91 8073025732</marquee>
-       <div class="one">
-         <section class="hero-section">
-    <h1>Best Packers and Movers in Hisar <br><span> Willkommen Packers Movers </span></h1>
-    <p>Ghar ya office shifting ab hui aasan aur surakshit. Turant free quotation paane ke liye sampark karein.</p>
-    <p><strong>Call Us: 08073025732</strong></p>
-</section>
-<div class="one-one">
-          <img class="imgone" src="image/sifting.png" alt="Moving Contact" />
+
+        <!-- 4. Contact & Form Section (Formspree Fixed) -->
+        <div class="eight">
+            <div class="eight-one">
+                <span>WHY CHOOSE US</span>
+                <h2>Why We're The Preferred Choice <span>For Moving</span></h2>
+                <p>✓ Timely service with no hidden fees.</p>
+                <p>✓ Safe, secure transport for your belongings.</p>
+                <p>✓ Customized moving plans to fit your needs.</p>
+                <p>✓ Eco-friendly practices for a sustainable move.</p>
+                <h3><span>+91 8073025732</span></h3>
+            </div>
+            
+            <div class="eight-two">
+                <!-- Sabhi inputs me name attribute daal diya hai taaki Formspree data read kar sake -->
+                <form action="https://formspree.io/f/mnqvydqv" method="POST" class="contact-form">
+                    <h3>Request A Quote</h3>
+                    
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="text" name="move_type" placeholder="Type of Move (e.g., Home, Office)" />
+                    <input type="tel" name="phone" placeholder="Phone Number" required />
+                    <input type="date" name="move_date" placeholder="Shifting Date" />
+                    
+                    <!-- Link ko hata kar clean action button lagaya hai taaki email submit ho -->
+                    <button type="submit">
+                        <span>&#10148; &nbsp; Submit Request</span>
+                    </button>
+                    
+                    <!-- WhatsApp ke liye alag se ek chota button de sakte hain niche (Optional) -->
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://wa.me/918073025732" target="_blank" style="text-decoration: none; color: #25D366; font-weight: bold; font-size: 14px;">
+                            Or Chat on WhatsApp Direct 💬
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
-        </div>
-       <div class="eight">
-        <div class="eight-one">
-          <span>WHY CHOOSE US</span>
-          <h2>Why We're The Preferred Choice <span>For Moving</span></h2>
-          <p>Timely service with no hidden fees.</p>
-          <p>Safe, secure transport for your belongings.</p>
-          <p>Customized moving plans to fit your needs.</p>
-          <p>Eco-friendly practices for a sustainable move.</p>
-          <h3><span> +91 8073025732</span></h3>
-        </div>
-        <div class="eight-two">
-          <form action="https://formspree.io/f/mnqvydqv" method="POST" class="contact-form">
-            <h3>Request A Quote</h3>
-            <input type="text" placeholder="Name" required />
-            <input type="text" placeholder="Type of Move" />
-            <input type="number" placeholder="Phone" required />
-            <input type="date" placeholder="Date" />
-            <a href="https://wa.me/918073025732" target="_blank">
-            <button type="submit">
-              <span> &#10148; &nbsp; Contact Us Now</span>
-            </button>
-            </a>
-          </form>
-        </div>
-      </div>
+
+    </div>
 
 </body>
 </html>

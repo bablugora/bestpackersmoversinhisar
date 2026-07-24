@@ -94,18 +94,45 @@
           <p>Experienced crew familiar with Sector 13 routes.</p>
           <h3><span> +91 8073025732</span></h3>
         </div>
-        <div class="eight-two">
-          <form action="https://formspree.io/f/mnqvydqv" method="POST" class="contact-form">
-            <h3>Request A Quote (Sector 13)</h3>
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="text" name="move_type" placeholder="Type of Move (e.g., Home Shifting)" />
-            <input type="number" name="phone" placeholder="Phone" required />
-            <input type="date" name="date" placeholder="Date" />
-            <button type="submit">
-              <span> &#10148; &nbsp; Get Sector 13 Quote</span>
-            </button>
-          </form>
-        </div>
+       <div class="eight-two">
+  <form id="whatsappForm" class="contact-form" onsubmit="sendToWhatsApp(event)">
+    <h3>Request Sector 13 Quote</h3>
+    
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="text" id="move_type" placeholder="Type of Move (e.g., Home Shifting)" />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <input type="date" id="date" />
+    
+    <button type="submit">
+      <span> &#10148; &nbsp; Get Sector 13 Quote</span>
+    </button>
+  </form>
+</div>
+
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault(); // Page reload hone se rokta hai
+
+  // Apna WhatsApp Number yahan daalein (Country Code ke saath, bina + sign ke)
+  let phoneNumber = "918073025732"; // Replace with your WhatsApp number
+
+  let name = document.getElementById("name").value;
+  let moveType = document.getElementById("move_type").value;
+  let phone = document.getElementById("phone").value;
+  let date = document.getElementById("date").value;
+
+  // WhatsApp Message Text
+  let message = `*New Quote Request (Sector 13  )*%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Move Type:* ${moveType}%0A` +
+                `*Phone:* ${phone}%0A` +
+                `*Date:* ${date}`;
+
+  // WhatsApp Open Redirect
+  let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+  window.open(whatsappURL, '_blank');
+}
+</script>
       </div>
 
       <!-- Footer Section -->

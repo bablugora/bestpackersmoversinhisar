@@ -13,10 +13,12 @@
     <link rel="canonical" href="https://bestpackersmoversinhisar.in/" />
     <link rel="icon" type="image/png" href="images/willkommen packers movers logo1.png" sizes="128x128" />
     
-    <!-- Fonts & CSS Preload -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap">
-    <link rel="stylesheet" href="style.css" />
+    <!-- Fonts & Icons Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EST9MWLVJ"></script>
@@ -26,258 +28,387 @@
       gtag('js', new Date());
       gtag('config', 'G-1EST9MWLVJ');
     </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0b132b',
+                            darkBlue: '#1c2541',
+                            accentGold: '#d4af37',
+                            brightGold: '#f39c12',
+                            goldLight: '#fef08a',
+                            slate: '#3a506b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glow-effect {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+        }
+    </style>
   </head>
-  <body>
-    <div class="main-container">
-      
-      <!-- Navbar Section -->
-      <div class="navbar">
-        <div class="baar-logo">
-          <a href="/"><img src="image/willkommen packers movers logo1.png" alt="Willkommen Packers Movers Logo"></a>
-        </div>
-        <div class="baar-links">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Blog</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="baar-btn">
-        <a href="/quotation">
-          <button class="btn">
-            <span>Get Free Quotation &nbsp; &#10148;</span>
-          </button>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-accentGold selection:text-slate-900 min-h-screen flex flex-col">
+    
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-amber-500/20 px-4 lg:px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="/" class="flex items-center space-x-3">
+          <img src="image/willkommen packers movers logo1.png" alt="Willkommen Packers Movers Logo" class="h-10 w-auto object-contain" onError="this.style.display='none'; document.getElementById('alt-logo').style.display='flex';" />
+          <div id="alt-logo" class="hidden w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-yellow-300 items-center justify-center text-slate-950 font-serif font-black text-xl shadow-lg">W</div>
+          <div>
+            <span class="font-serif text-lg font-bold tracking-wider gold-gradient-text block leading-none">WILLKOMMEN</span>
+            <span class="text-[10px] text-amber-200/70 tracking-widest uppercase font-semibold">Packers & Movers Hisar</span>
+          </div>
         </a>
       </div>
 
-      <!-- Hero Section -->
-      <div class="one">
-        <section class="hero-section">
-          <h1>Best Packers and Movers in Hisar <br><span> Willkommen Packers Movers </span></h1>
-          <p>Ghar ya office shifting ab hui aasan aur surakshit. Turant free quotation paane ke liye sampark karein.</p>
-          <p><strong>Call Us: 08073025732</strong></p>  
-        </section>
-        <div class="one-one">
-          <img class="imgone" src="image/sifting.png" alt="Moving Contact" />
-        </div>
-      </div>
+      <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold">
+        <a href="/" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Home</a>
+        <a href="/about" class="text-slate-300 hover:text-amber-300 transition-colors">About</a>
+        <a href="/services" class="text-slate-300 hover:text-amber-300 transition-colors">Services</a>
+        <a href="/contact" class="text-slate-300 hover:text-amber-300 transition-colors">Contact</a>
+        <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="text-slate-300 hover:text-amber-300 transition-colors">Blog</a>
+      </nav>
 
-      <!-- Highlight Section -->
-      <div class="two">
-        <div class="two-one">
-          <h2 class="two-one-h2"> <span class="highlight-text">नया घर, नई शुरुआत</span> 
-          <span class="arrow">&#10148;</span> तो फिर शिफ्टिंग का पुराना सिरदर्द क्यों?</h2>
-          <p class="two-one-p">
-            <b>Willkommen Packers Movers</b> के साथ अनुभव कीजिए इंडिया की सबसे स्मूद, प्रीमियम और हाई-टेक पैकर्स एंड मूवर्स सर्विस। हम सिर्फ सामान डिलीवर नहीं करते, हम आपके अनमोल इमोशंस और यादों को पूरी सुरक्षा के साथ नए आशियाने तक पहुँचाते हैं। 
-          </p>
-          <p class="two-one-pp">
-            हमारी एलीट टीम <strong>5-लेयर अल्ट्रा-प्रोटेक्टिव पैकेजिंग</strong>, <strong>जीपीएस-ट्रैक्ड स्मार्ट व्हीकल्स</strong> और <strong>जीरो-डैमेज गारंटी</strong> के साथ काम करती है। चाहे घर की नाजुक क्रॉकरी हो, आपका कीमती फर्नीचर हो या आपकी पसंदीदा कार—जब तक हम हैं, आपको सिर्फ आराम करना है। अपनी शिफ्टिंग को दीजिए एक वीआईपी ट्रीटमेंट।
-          </p>
-          <div class="cta-container">
-            <a href="/quotation" class="book-now-btn">आज ही अपनी स्लॉट बुक करें!</a>
-          </div>
-        </div>
+      <div class="flex items-center space-x-3">
+        <a href="/quotation" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-md flex items-center space-x-1.5">
+          <span>Get Free Quotation</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
       </div>
+    </header>
 
-      <!-- Info Bar -->
-      <div class="nine">
-        <div class="nine-one">
-          <span>100% Trusted Willkommen Packers Movers &nbsp;
-          <ion-icon name="logo-whatsapp"></ion-icon> &nbsp;
-          08073025732</span>
-        </div>
-      </div>
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-12">
 
-      <!-- About Section -->
-      <div class="three">
-        <div class="three-one">
-          <img src="image/Willkommen Packers Movers About us.jpg" alt="About Us" />
-          <div class="three-one-one">
-            <p class="subtitle">About</p>
-            <h2>Setting New Standards in the Moving Industry</h2>
-            <p>
-              Redefining the moving experience with unmatched professionalism,
-              reliability, and care. We combine innovative solutions,
-              personalized service, and a commitment to excellence to set new
-              benchmarks.
+      <!-- HERO SECTION -->
+      <section class="relative rounded-3xl overflow-hidden border border-amber-500/30 bg-gradient-to-b from-slate-900 via-slate-950 to-brand-navy p-8 md:p-12 glow-effect">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-amber-300 text-xs font-bold uppercase tracking-wider">
+              <i class="fa-solid fa-crown"></i>
+              <span>Best Packers & Movers in Hisar</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-serif font-black tracking-wide gold-gradient-text uppercase leading-tight">
+              Willkommen Packers Movers
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Ghar ya office shifting ab hui aasan aur surakshit. Turant free quotation paane ke liye sampark karein.
             </p>
-            <a href="/about"><button>More About us</button></a>
+            <div class="p-4 glass-card rounded-xl inline-flex items-center space-x-3 border-amber-500/40">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest block">Call Us For Booking</span>
+                <a href="tel:08073025732" class="text-lg font-extrabold text-amber-300">08073025732</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img src="image/sifting.png" alt="Moving Contact" class="max-h-80 w-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
-        <div class="three-two">
-          <div class="three-two-one">
-            <p>
-              “Moving isn't just about transporting items, it's about embracing
-              change and starting fresh. We're dedicated to ensuring your
-              journey is seamless, so you can focus on settling into your new
-              beginning.”
-            </p>
-            <hr />
-            <h3>Rakesh</h3>
-            <h4>CEO</h4>
-          </div>
-          <img src="image/Rakesh Sir.jpg" alt="CEO Rakesh" />
+      </section>
+
+      <!-- HIGHLIGHT SECTION -->
+      <section class="glass-card p-8 rounded-3xl space-y-6">
+        <div class="space-y-3">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100 flex flex-wrap items-center gap-2">
+            <span class="gold-gradient-text">नया घर, नई शुरुआत</span>
+            <i class="fa-solid fa-arrow-right text-amber-400 text-xl"></i>
+            <span>तो फिर शिफ्टिंग का पुराना सिरदर्द क्यों?</span>
+          </h2>
+          <div class="w-16 h-1 bg-amber-500 rounded-full"></div>
         </div>
-      </div>
-
-      <!-- Services Section -->
-      <div class="four">
-        <p class="subtitle">OUR SERVICES</p>
-        <h2>
-          Reliable Moving Services Built <br />
-          <span>Around You</span>
-        </h2>
-
-        <div class="services-grid">
-          <div class="four-one">
-            <ion-icon name="home-outline"></ion-icon>
-            <h3>Residential Moving</h3>
-            <p>Hassle-Free Home Relocation Services Tailored To Your Needs.</p>
-            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Read More &rarr;</a>
-          </div>
-          <div class="four-one">
-            <ion-icon name="bicycle-outline"></ion-icon>
-            <h3>Bike Moving</h3>
-            <p>Safe & Reliable Bike Transport Services Across India.</p>
-            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Read More <span>&rarr;</span></a>
-          </div>
-          <div class="four-one">
-            <ion-icon name="car-outline"></ion-icon>
-            <h3>Car Moving</h3>
-            <p>Scratch-Free Container Vehicle Car Relocation Service.</p>
-            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Read More <span>&rarr;</span></a>
-          </div>
-          <div class="four-one">
-            <ion-icon name="business-outline"></ion-icon>
-            <h3>Office Moving</h3>
-            <p>Seamless Office & Commercial Goods Relocation Services.</p>
-            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Read More <span>&rarr;</span></a>
-          </div>
-        </div>
-
-        <p class="services-footer">
-          Expert Packing For Your Move. <a href="/contact">Contact us Now</a>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          <b>Willkommen Packers Movers</b> के साथ अनुभव कीजिए इंडिया की सबसे स्मूद, प्रीमियम और हाई-टेक पैकर्स एंड मूवर्स सर्विस। हम सिर्फ सामान डिलीवर नहीं करते, हम आपके अनमोल इमोशंस और यादों को पूरी सुरक्षा के साथ नए आशियाने तक पहुँचाते हैं।
         </p>
-        <a href="/services">
-          <button class="btn-all">
-            <span> View All Services &#10148; </span>
-          </button>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          हमारी एलीट टीम <strong>5-लेयर अल्ट्रा-प्रोटेक्टिव पैकेजिंग</strong>, <strong>जीपीएस-ट्रैक्ड स्मार्ट व्हीकल्स</strong> और <strong>जीरो-डैमेज गारंटी</strong> के साथ काम करती है। चाहे घर की नाजुक क्रॉकरी हो, आपका कीमती फर्नीचर हो या आपकी पसंदीदा कार—जब तक हम हैं, आपको सिर्फ आराम करना है। अपनी शिफ्टिंग को दीजिए एक वीआईपी ट्रीटमेंट।
+        </p>
+        <div>
+          <a href="/quotation" class="inline-block bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-6 py-3 rounded-xl font-extrabold text-xs transition shadow-lg">
+            आज ही अपनी स्लॉट बुक करें!
+          </a>
+        </div>
+      </section>
+
+      <!-- INFO STRIP -->
+      <section class="bg-gradient-to-r from-amber-500/20 via-slate-900 to-amber-500/20 border border-amber-500/30 p-4 rounded-2xl flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-amber-300">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-shield-halved text-amber-400 text-base"></i>
+          <span>100% Trusted Willkommen Packers Movers</span>
+        </div>
+        <a href="https://wa.me/918073025732" target="_blank" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl transition">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp: 08073025732</span>
         </a>
-      </div>
+      </section>
 
-      <!-- Projects Section -->
-      <div class="five">
-        <p class="subtitle">LATEST PROJECTS</p>
-        <div class="five-one">
-          <h2>Every Move Counts Discover Our <span> Latest Work</span></h2>
-          <p>
-            Take a closer look at our recent projects and see how we turn every
-            move into a seamless experience.
-          </p>
-        </div>
-        <div class="five-two">
-          <img src="image/loading.jpeg" alt="Project 1" />
-          <img src="image/loading-car.avif" alt="Project 2" />
-          <img src="image/Whare House.jpeg" alt="Project 3" />    
-        </div>
-        <a href="/services"><button><span> View All Projects</span></button></a>
-      </div>
+      <!-- ABOUT SECTION -->
+      <section class="space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="glass-card p-4 rounded-3xl overflow-hidden">
+            <img src="image/Willkommen Packers Movers About us.jpg" alt="About Us" class="rounded-2xl w-full h-auto object-cover" />
+            <div class="p-4 space-y-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-400">About Us</span>
+              <h2 class="text-2xl font-serif font-bold text-slate-100">Setting New Standards in the Moving Industry</h2>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Redefining the moving experience with unmatched professionalism, reliability, and care. We combine innovative solutions, personalized service, and a commitment to excellence to set new benchmarks.
+              </p>
+              <a href="/about" class="inline-block bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 text-amber-300 px-4 py-2 rounded-xl text-xs font-semibold transition">
+                More About us
+              </a>
+            </div>
+          </div>
 
-      <!-- Skills Section -->
-      <div class="seven">
-        <div class="seven-one">
-          <img src="image/benar1.jpeg" alt="Skill Image Main" />
-          <div class="seven-one-one">
-            <img src="image/contact.jpg" alt="Skill Image Sub" />
+          <div class="glass-card p-6 rounded-3xl space-y-6">
+            <div class="space-y-4">
+              <p class="text-slate-300 italic text-sm leading-relaxed border-l-2 border-amber-500 pl-4">
+                “Moving isn't just about transporting items, it's about embracing change and starting fresh. We're dedicated to ensuring your journey is seamless, so you can focus on settling into your new beginning.”
+              </p>
+              <div class="flex items-center space-x-4 pt-2">
+                <img src="image/Rakesh Sir.jpg" alt="CEO Rakesh" class="w-14 h-14 rounded-full border-2 border-amber-500/50 object-cover" />
+                <div>
+                  <h3 class="text-base font-bold text-amber-300">Rakesh</h3>
+                  <h4 class="text-xs text-slate-400 font-semibold uppercase">CEO</h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="seven-two">
-          <span>OUR SKILL</span>
-          <h2>Experienced Movers With A Passion <span>For Perfection</span></h2>
-          <p>
-            Our team is equipped with the skills and expertise to handle every
-            aspect of your move.
-          </p>
-          <a href="/contact"><button><span> Book Service Now &nbsp; &#10148;</span></button></a>
-        </div>
-      </div>
+      </section>
 
-      <!-- Contact/Form Section -->
-      <div class="eight">
-        <div class="eight-one">
-          <span>WHY CHOOSE US</span>
-          <h2>Why We're The Preferred Choice <span>For Moving</span></h2>
-          <p>Timely service with no hidden fees.</p>
-          <p>Safe, secure transport for your belongings.</p>
-          <p>Customized moving plans to fit your needs.</p>
-          <p>Eco-friendly practices for a sustainable move.</p>
-          <h3><span> +91 8073025732</span></h3>
+      <!-- SERVICES SECTION -->
+      <section class="space-y-8">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-extrabold tracking-widest text-amber-400 uppercase">OUR SERVICES</span>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100">
+            Reliable Moving Services Built <span class="gold-gradient-text">Around You</span>
+          </h2>
+          <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
         </div>
-        <div class="eight-two">
-          <form action="https://formspree.io/f/mnqvydqv" method="POST" class="contact-form">
-            <h3>Request A Quote</h3>
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="text" name="move_type" placeholder="Type of Move" />
-            <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Please enter 10 digit number" required />
-            <input type="date" name="date" placeholder="Date" onfocus="(this.type='date')" onblur="(this.type='text')" />
-            <button type="submit">
-              <span> &#10148; &nbsp; Contact Us Now</span>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-amber-500/60 transition group">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <h3 class="text-base font-bold text-amber-300">Residential Moving</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Hassle-Free Home Relocation Services Tailored To Your Needs.</p>
+            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-amber-400 hover:underline">
+              Read More <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-amber-500/60 transition group">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h3 class="text-base font-bold text-amber-300">Bike Moving</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Safe & Reliable Bike Transport Services Across India.</p>
+            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-amber-400 hover:underline">
+              Read More <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-amber-500/60 transition group">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <h3 class="text-base font-bold text-amber-300">Car Moving</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Scratch-Free Container Vehicle Car Relocation Service.</p>
+            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-amber-400 hover:underline">
+              Read More <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-amber-500/60 transition group">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3 class="text-base font-bold text-amber-300">Office Moving</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Seamless Office & Commercial Goods Relocation Services.</p>
+            <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-amber-400 hover:underline">
+              Read More <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center pt-4 space-y-4">
+          <p class="text-xs text-slate-300 font-semibold">
+            Expert Packing For Your Move. <a href="/contact" class="text-amber-400 underline">Contact us Now</a>
+          </p>
+          <a href="/services" class="inline-block bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-6 py-3 rounded-xl font-extrabold text-xs transition shadow-lg">
+            View All Services <i class="fa-solid fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section class="space-y-6">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-extrabold tracking-widest text-amber-400 uppercase">LATEST PROJECTS</span>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100">
+            Every Move Counts Discover Our <span class="gold-gradient-text">Latest Work</span>
+          </h2>
+          <p class="text-xs text-slate-400 max-w-xl mx-auto">
+            Take a closer look at our recent projects and see how we turn every move into a seamless experience.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl overflow-hidden border border-amber-500/20 h-56">
+            <img src="image/loading.jpeg" alt="Project 1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-amber-500/20 h-56">
+            <img src="image/loading-car.avif" alt="Project 2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-amber-500/20 h-56">
+            <img src="image/Whare House.jpeg" alt="Project 3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+          </div>
+        </div>
+
+        <div class="text-center pt-2">
+          <a href="/services" class="inline-block bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 text-amber-300 px-6 py-2.5 rounded-xl text-xs font-extrabold transition">
+            View All Projects
+          </a>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section class="glass-card p-8 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="grid grid-cols-2 gap-4">
+          <img src="image/benar1.jpeg" alt="Skill Image Main" class="rounded-2xl w-full h-48 object-cover border border-amber-500/20" />
+          <img src="image/contact.jpg" alt="Skill Image Sub" class="rounded-2xl w-full h-48 object-cover border border-amber-500/20 mt-6" />
+        </div>
+        <div class="space-y-4">
+          <span class="text-xs font-extrabold tracking-widest text-amber-400 uppercase">OUR SKILL</span>
+          <h2 class="text-2xl font-serif font-bold text-slate-100 leading-tight">
+            Experienced Movers With A Passion <span class="gold-gradient-text">For Perfection</span>
+          </h2>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Our team is equipped with the skills and expertise to handle every aspect of your move.
+          </p>
+          <a href="/contact" class="inline-block bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-6 py-3 rounded-xl font-extrabold text-xs transition shadow-lg">
+            Book Service Now <i class="fa-solid fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US & FORM SECTION -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <span class="text-xs font-extrabold tracking-widest text-amber-400 uppercase">WHY CHOOSE US</span>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">
+            Why We're The Preferred Choice <span class="gold-gradient-text">For Moving</span>
+          </h2>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Timely service with no hidden fees.</span></li>
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Safe, secure transport for your belongings.</span></li>
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Customized moving plans to fit your needs.</span></li>
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Eco-friendly practices for a sustainable move.</span></li>
+          </ul>
+          <div class="pt-4 border-t border-slate-800">
+            <span class="text-xs text-slate-400 uppercase font-bold block">Direct Helpline</span>
+            <span class="text-xl font-black text-amber-400">+91 8073025732</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <h3 class="text-xl font-bold text-amber-300">Request A Quote</h3>
+          <form action="https://formspree.io/f/mnqvydqv" method="POST" class="space-y-3">
+            <div>
+              <input type="text" name="name" placeholder="Name" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <input type="text" name="move_type" placeholder="Type of Move" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Please enter 10 digit number" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <input type="date" name="date" placeholder="Date" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 py-3 rounded-xl font-extrabold text-xs transition flex items-center justify-center space-x-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Contact Us Now</span>
             </button>
           </form>
         </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-slate-900 border-t border-amber-500/20 text-slate-300 text-xs mt-12">
+      <div class="max-w-7xl mx-auto p-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="space-y-3">
+          <h2 class="text-lg font-bold text-amber-300">Moving<br />Anytime Anywhere</h2>
+          <p class="text-slate-400 text-[11px]">Reliable. Professional. Hassle-Free Moving Solutions.</p>
+          <p class="text-slate-400 text-[11px] leading-relaxed">Red Square Market, SCO 73-74, near Eminent Mall, Mehta Nagar, Hisar, Haryana 125001</p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Quick Links</h2>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="/" class="hover:text-amber-400 transition">Home</a></li>
+            <li><a href="/about" class="hover:text-amber-400 transition">About</a></li>
+            <li><a href="/services" class="hover:text-amber-400 transition">Services</a></li>
+            <li><a href="/contact" class="hover:text-amber-400 transition">Contact</a></li>
+            <li><a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="hover:text-amber-400 transition">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Contact Info</h2>
+          <p class="text-slate-400">Phone: +91 8073025732</p>
+          <p class="text-slate-400">Email: <a href="mailto:willkommenpackersmovers@gmail.com" class="hover:text-amber-400">willkommenpackersmovers@gmail.com</a></p>
+          <div class="flex items-center space-x-3 text-base pt-2 text-amber-400">
+            <a href="https://wa.me/918073025732" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/1LoFWaGfdB/" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@WillkommenDeutsch" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/willkommenpackersmovers/" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Our Local Service Areas</h2>
+          <div class="flex flex-wrap gap-2">
+            <a href="/packers-movers-azad-nagar" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Azad Nagar</a>
+            <a href="/packers-movers-sector-13" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 13</a>
+            <a href="/packers-movers-sector-14" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 14</a>
+            <a href="/packers-movers-sector-15" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 15</a>
+            <a href="/packers-movers-model-town" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Model Town</a>
+            <a href="/packers-movers-urban-estate" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Urban Estate</a>
+            <a href="/packers-movers-hisar-cantt" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Hisar Cantt</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Footer Section -->
-      <div class="footer">
-        <div class="footer-one">
-          <h2>Moving<br />Anytime Anywhere</h2>
-          <p>Reliable. Professional. Hassle-Free Moving Solutions.</p>
-          <h3>Red Square Market, SCO 73-74, near Eminent Mall, Mehta Nagar, Hisar, Haryana 125001</h3>
-        </div>
-        <div class="footer-one social-links">
-          <a href="https://wa.me/918073025732" target="_blank" rel="noopener"><ion-icon name="logo-whatsapp"></ion-icon></a>
-          <a href="https://www.facebook.com/share/1LoFWaGfdB/" target="_blank" rel="noopener"><ion-icon name="logo-facebook"></ion-icon></a>
-          <a href="https://www.youtube.com/@WillkommenDeutsch" target="_blank" rel="noopener"><ion-icon name="logo-youtube"></ion-icon></a>
-          <a href="https://www.instagram.com/willkommenpackersmovers/" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon></a>
-        </div>
-        <div class="footer-one quick-links">
-          <h2>Quick Links</h2>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
-          <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Blog</a>
-        </div>
-        <div class="footer-one contact-info">
-          <h2>Contact Info</h2>
-          <p>Phone: +91 8073025732</p>
-          <p>Email: <a href="mailto:willkommenpackersmovers@gmail.com">willkommenpackersmovers@gmail.com</a></p>
-        </div>
+      <div class="border-t border-slate-800 py-4 text-center text-[11px] text-slate-500">
+        Copyright © 2026 Willkommen Packers Movers. All Rights Reserved.
       </div>
+    </footer>
 
-      <!-- Local SEO Links Block -->
-      <div class="footer-one local-areas" style="padding: 10px 0; font-family: 'Poppins', sans-serif; background-color: #333; color: #fff; text-align: center; width: 100%; margin-top: 20px;">
-        <h2 style="font-size: 1.3rem; margin-bottom: 10px; color: #fff;">Our Local Service Areas</h2>
-        <div style="display: flex; gap: 25px; flex-wrap: wrap; text-align: center; justify-content: center; padding: 10px;">
-          <a href="/packers-movers-azad-nagar" style="color: #ccc; text-decoration: none;">Azad Nagar</a>
-          <a href="/packers-movers-sector-13" style="color: #ccc; text-decoration: none;">Sector 13</a>
-          <a href="/packers-movers-sector-14" style="color: #ccc; text-decoration: none;">Sector 14</a>
-          <a href="/packers-movers-sector-15" style="color: #ccc; text-decoration: none;">Sector 15</a>
-          <a href="/packers-movers-model-town" style="color: #ccc; text-decoration: none;">Model Town</a>
-          <a href="/packers-movers-urban-estate" style="color: #ccc; text-decoration: none;">Urban Estate</a>
-          <a href="/packers-movers-hisar-cantt" style="color: #ccc; text-decoration: none;">Hisar Cantt</a>
-        </div>
-      </div>
-      <hr />
-      <div class="footer-two">Copyright © 2026 All Rights Reserved.</div>
-    </div>
-
-    <!-- Script Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

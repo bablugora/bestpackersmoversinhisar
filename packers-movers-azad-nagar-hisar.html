@@ -46,21 +46,23 @@
             }
         }
     </script>
-    <style>
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA7C11 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        .glow-effect {
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
-        }
-    </style>
+     <style>
+    .gold-gradient-text {
+        background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA7C11 100%);
+        background-clip: text; /* Standard property */
+        -webkit-background-clip: text; /* Vendor prefix */
+        -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px); /* Safari support ke liye add kiya */
+        border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .glow-effect {
+        box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+    }
+</style>
   </head>
   <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-accentGold selection:text-slate-900 min-h-screen flex flex-col">
 

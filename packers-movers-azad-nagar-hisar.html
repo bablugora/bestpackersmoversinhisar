@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best Packers and Movers in Azad Nagar Hisar | Willkommen Relocation</title>
     <meta name="description" content="Looking for reliable packers and movers in Azad Nagar Hisar? Willkommen Packers Movers offers affordable home and office shifting services in Azad Nagar." />
-    <meta name="keywords" content="packers and movers in azad nagar hisar, azad nagar hisar shifting service, home shifting azad nagar, willkommen packers azad nagar">
-    
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap">
-    <link rel="stylesheet" href="style.css" />
+    <meta name="keywords" content="packers and movers in azad nagar hisar, azad nagar hisar shifting service, home shifting azad nagar, willkommen packers azad nagar" />
+    <link rel="canonical" href="https://bestpackersmoversinhisar.in/packers-movers-azad-nagar" />
+    <link rel="icon" type="image/png" href="images/willkommen packers movers logo1.png" sizes="128x128" />
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EST9MWLVJ"></script>
@@ -19,164 +24,233 @@
       gtag('js', new Date());
       gtag('config', 'G-1EST9MWLVJ');
     </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0b132b',
+                            darkBlue: '#1c2541',
+                            accentGold: '#d4af37',
+                            brightGold: '#f39c12',
+                            goldLight: '#fef08a',
+                            slate: '#3a506b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glow-effect {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+        }
+    </style>
   </head>
-  <body>
-    <div class="main-container">
-      
-      <!-- Navbar Section -->
-      <div class="navbar">
-        <div class="baar-logo">
-          <img src="image/willkommen packers movers logo1.png" alt="Willkommen Packers Movers Logo"> 
-        </div>
-        <div class="baar-links">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Blog</a></li>
-          </ul>
-        </div> 
-      </div>
-      
-      <div class="baar-btn">
-        <a href="quotation.html" target="_blank">
-          <button class="btn">
-            <span>Get Free Quotation &nbsp; &#10148;</span>
-          </button>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-accentGold selection:text-slate-900 min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-amber-500/20 px-4 lg:px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="/" class="flex items-center space-x-3">
+          <img src="image/willkommen packers movers logo1.png" alt="Willkommen Packers Movers Logo" class="h-10 w-auto object-contain" onError="this.style.display='none'; document.getElementById('alt-logo').style.display='flex';" />
+          <div id="alt-logo" class="hidden w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-yellow-300 items-center justify-center text-slate-950 font-serif font-black text-xl shadow-lg">W</div>
+          <div>
+            <span class="font-serif text-lg font-bold tracking-wider gold-gradient-text block leading-none">WILLKOMMEN</span>
+            <span class="text-[10px] text-amber-200/70 tracking-widest uppercase font-semibold">Packers & Movers Hisar</span>
+          </div>
         </a>
       </div>
 
-      <!-- Hero Section -->
-      <div class="one">
-        <section class="hero-section">
-          <h1>Packers and Movers in Azad Nagar Hisar <br><span> Willkommen Packers Movers </span></h1>
-          <p>Azad Nagar aur aas-paas ke sabhi ilaakon ke liye sasti, safe aur fast local shifting service. Free quotation ke liye abhi call karein.</p>
-          <p><strong>Call Us: 08073025732</strong></p>  
-        </section>
-        <div class="one-one">
-          <img class="imgone" src="image/sifting.png" alt="Moving Contact" />
-        </div>
-      </div>
+      <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold">
+        <a href="/" class="text-slate-300 hover:text-amber-300 transition-colors">Home</a>
+        <a href="/about" class="text-slate-300 hover:text-amber-300 transition-colors">About</a>
+        <a href="/services" class="text-slate-300 hover:text-amber-300 transition-colors">Services</a>
+        <a href="/contact" class="text-slate-300 hover:text-amber-300 transition-colors">Contact</a>
+        <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="text-slate-300 hover:text-amber-300 transition-colors">Blog</a>
+      </nav>
 
-      <!-- Highlight Section -->
-      <div class="two">
-        <div class="two-one">
-          <h2 class="two-one-h2"> <span class="highlight-text">Azad Nagar Me Safe Relocation</span> 
-          <span class="arrow">&#10148;</span> Shifting Ki Tension Ko Karo Bye-Bye!</h2>
-          <p class="two-one-p">
-            <b>Willkommen Packers Movers</b> Azad Nagar Hisar me sabse safe aur pocket-friendly packing and moving service deta hai. Azad Nagar ki residential colonies aur commercial shops se local ya outstation shifting ke liye humari skilled team humesha ready hai.
-          </p>
-          <p class="two-one-pp">
-            Hum use karte hain <strong>5-Layer High Quality Packaging</strong> jo aapke ghar ke furniture, electronics aur fragile items ko full damage protection deti hai. Local Azad Nagar ke narrow streets aur routes ki poori knowledge ke saath humara kaam fast aur seamless hota hai.
-          </p>
-          <div class="cta-container">
-            <a href="quotation.html" class="book-now-btn">Azad Nagar Shifting Booking Karein!</a>
+      <div class="flex items-center space-x-3">
+        <a href="/quotation" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-md flex items-center space-x-1.5">
+          <span>Get Free Quotation</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-12">
+
+      <!-- HERO SECTION -->
+      <section class="relative rounded-3xl overflow-hidden border border-amber-500/30 bg-gradient-to-b from-slate-900 via-slate-950 to-brand-navy p-8 md:p-12 glow-effect">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-amber-300 text-xs font-bold uppercase tracking-wider">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Azad Nagar, Hisar Local Branch</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-serif font-black tracking-wide gold-gradient-text uppercase leading-tight">
+              Best Packers & Movers In Azad Nagar Hisar
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Azad Nagar Hisar mein safe, affordable aur hassle-free home & office shifting. High-quality bubble packing aur zero-damage guarantee ke sath!
+            </p>
+            <div class="p-4 glass-card rounded-xl inline-flex items-center space-x-3 border-amber-500/40">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest block">Call Azad Nagar Helpline</span>
+                <a href="tel:08073025732" class="text-lg font-extrabold text-amber-300">08073025732</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img src="image/sifting.png" alt="Moving Service Azad Nagar Hisar" class="max-h-80 w-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Info Bar -->
-      <div class="nine">
-        <div class="nine-one">
-          <span>100% Trusted Willkommen Packers Movers in Azad Nagar &nbsp;
-          <ion-icon name="logo-whatsapp"></ion-icon> &nbsp;
-          08073025732</span>
+      <!-- LOCAL SERVICES DETAIL -->
+      <section class="glass-card p-8 rounded-3xl space-y-6">
+        <div class="space-y-3">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100">
+            Azad Nagar Hisar Mein <span class="gold-gradient-text">Top-Class Relocation Services</span>
+          </h2>
+          <div class="w-16 h-1 bg-amber-500 rounded-full"></div>
         </div>
-      </div>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Willkommen Packers Movers Azad Nagar Hisar mein rehne wale sabhi logon ko professional packing aur shifting ki suvidha pradan karta hai. Humara local office aur experienced staff Azad Nagar se Hisar ke kisi bhi ilake (Sector 13, 14, 15, Model Town, Urban Estate) ya India ke kisi bhi shahar mein surakshit shifting karta hai.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+          <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1 text-center">
+            <i class="fa-solid fa-truck-moving text-amber-400 text-2xl mb-1"></i>
+            <h3 class="text-xs font-bold text-slate-200">Local Azad Nagar Move</h3>
+            <p class="text-[11px] text-slate-400">Same Day Quick Delivery</p>
+          </div>
+          <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1 text-center">
+            <i class="fa-solid fa-boxes-packing text-amber-400 text-2xl mb-1"></i>
+            <h3 class="text-xs font-bold text-slate-200">3-Layer Heavy Packing</h3>
+            <p class="text-[11px] text-slate-400">Bubble Wrap & Corrugated Sheets</p>
+          </div>
+          <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl space-y-1 text-center">
+            <i class="fa-solid fa-shield-halved text-amber-400 text-2xl mb-1"></i>
+            <h3 class="text-xs font-bold text-slate-200">Transit Insurance</h3>
+            <p class="text-[11px] text-slate-400">100% Safety Guarantee</p>
+          </div>
+        </div>
+      </section>
 
-      <!-- Form Section -->
-      <div class="eight">
-        <div class="eight-one">
-          <span>WHY CHOOSE US IN AZAD NAGAR</span>
-          <h2>Why We're The Preferred Choice <span>For Azad Nagar Moving</span></h2>
-          <p>Quick doorstep survey & transparent rates in Azad Nagar.</p>
-          <p>Safe handling of fragile items and heavy household goods.</p>
-          <p>Zero hidden fees with clear pricing estimate.</p>
-          <p>Experienced local crew with fast pickup & delivery.</p>
-          <h3><span> +91 8073025732</span></h3>
+      <!-- FORM & CONTACT SECTION -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <span class="text-xs font-extrabold tracking-widest text-amber-400 uppercase">LOCAL BRANCH HIGHLIGHTS</span>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">
+            Why Choose Us in <span class="gold-gradient-text">Azad Nagar Hisar?</span>
+          </h2>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Azad Nagar mein local team available 24/7.</span></li>
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Subse saste rates aur zero hidden charges.</span></li>
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Ghar, Bike, Car aur Office Shifting suvidha.</span></li>
+            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-amber-400"></i><span>Expert labor trained in heavy furniture handling.</span></li>
+          </ul>
+          <div class="pt-4 border-t border-slate-800 flex items-center space-x-3">
+            <a href="https://wa.me/918073025732" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-bold text-xs text-center transition flex items-center justify-center space-x-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>WhatsApp Booking</span>
+            </a>
+          </div>
         </div>
-        <div class="eight-two">
-          <form id="whatsappForm" class="contact-form" onsubmit="sendToWhatsApp(event)">
-            <h3>Request Azad Nagar Quote</h3>
-            
-            <input type="text" id="name" placeholder="Name" required />
-            <input type="text" id="move_type" placeholder="Type of Move (e.g., Home Shifting)" />
-            <input type="tel" id="phone" placeholder="Phone Number" required />
-            <input type="date" id="date" />
-            
-            <button type="submit">
-              <span> &#10148; &nbsp; Get Azad Nagar Quote</span>
+
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <h3 class="text-xl font-bold text-amber-300">Azad Nagar Quote Request</h3>
+          <form action="https://formspree.io/f/mnqvydqv" method="POST" class="space-y-3">
+            <div>
+              <input type="text" name="name" placeholder="Your Full Name" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <input type="text" name="move_type" placeholder="Shifting Type (e.g. Home / Bike / Office)" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Please enter 10 digit number" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <input type="date" name="date" placeholder="Date" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+            </div>
+            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 py-3 rounded-xl font-extrabold text-xs transition flex items-center justify-center space-x-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Get Azad Nagar Estimate</span>
             </button>
           </form>
         </div>
-      </div>
+      </section>
 
-      <!-- Footer Section -->
-      <div class="footer">
-        <div class="footer-one">
-          <h2>Moving<br />Anytime Anywhere</h2>
-          <p>Reliable. Professional. Hassle-Free Moving Solutions.</p>
-          <h3>Red Square Market, SCO 73-74, near Eminent Mall, Mehta Nagar, Hisar, Haryana 125001</h3>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-slate-900 border-t border-amber-500/20 text-slate-300 text-xs mt-12">
+      <div class="max-w-7xl mx-auto p-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="space-y-3">
+          <h2 class="text-lg font-bold text-amber-300">Moving<br />Anytime Anywhere</h2>
+          <p class="text-slate-400 text-[11px]">Reliable. Professional. Hassle-Free Moving Solutions.</p>
+          <p class="text-slate-400 text-[11px] leading-relaxed">Red Square Market, SCO 73-74, near Eminent Mall, Mehta Nagar, Hisar, Haryana 125001</p>
         </div>
-        
-        <div class="footer-one social-links">
-          <a href="https://wa.me/918073025732" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
-          <a href="https://www.facebook.com/share/1LoFWaGfdB/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-          <a href="https://www.youtube.com/@WillkommenDeutsch" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
-          <a href="https://www.instagram.com/willkommenpackersmovers/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+
+        <div class="space-y-3">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Quick Links</h2>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="/" class="hover:text-amber-400 transition">Home</a></li>
+            <li><a href="/about" class="hover:text-amber-400 transition">About</a></li>
+            <li><a href="/services" class="hover:text-amber-400 transition">Services</a></li>
+            <li><a href="/contact" class="hover:text-amber-400 transition">Contact</a></li>
+            <li><a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="hover:text-amber-400 transition">Blog</a></li>
+          </ul>
         </div>
-        
-        <div class="footer-one local-areas" style="padding: 10px 0; font-family: 'Poppins', sans-serif; background-color: #333; color: #fff; text-align: center; width: 100%; margin-top: 20px;">
-          <h2 style="font-size: 1.3rem; margin-bottom: 10px; color: #fff;">Our Local Service Areas</h2>
-          <div style="display: flex; gap: 25px; flex-wrap: wrap; text-align: center; justify-content: center; padding: 10px;">
-            <a href="/packers-movers-model-town" style="color: #ccc; text-decoration: none;">Model Town</a>
-            <a href="/packers-movers-hisar-cantt" style="color: #ccc; text-decoration: none;">Hisar Cantt</a>
-            <a href="/packers-movers-azad-nagar-hisar" style="color: #ccc; text-decoration: none;">Azad Nagar</a>
-            <a href="/packers-movers-sector-15" style="color: #ccc; text-decoration: none;">Sector 15</a>
-            <a href="/packers-movers-urban-estate" style="color: #ccc; text-decoration: none;">Urban Estate</a>
-            <a href="/packers-movers-sector-14" style="color: #ccc; text-decoration: none;">Sector 14</a>
-            <a href="/packers-movers-sector-13" style="color: #ae7979; text-decoration: none;">Sector 13</a>
+
+        <div class="space-y-3">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Contact Info</h2>
+          <p class="text-slate-400">Phone: +91 8073025732</p>
+          <p class="text-slate-400">Email: <a href="mailto:willkommenpackersmovers@gmail.com" class="hover:text-amber-400">willkommenpackersmovers@gmail.com</a></p>
+          <div class="flex items-center space-x-3 text-base pt-2 text-amber-400">
+            <a href="https://wa.me/918073025732" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/1LoFWaGfdB/" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@WillkommenDeutsch" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/willkommenpackersmovers/" target="_blank" rel="noopener" class="hover:text-amber-200"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
 
-        <div class="footer-one quick-links">
-          <h2>Quick Links</h2>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
-          <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener">Blog</a>
+        <div class="space-y-3">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Our Local Service Areas</h2>
+          <div class="flex flex-wrap gap-2">
+            <a href="/packers-movers-azad-nagar" class="bg-amber-500 text-slate-950 font-bold px-2.5 py-1 rounded text-[11px]">Azad Nagar</a>
+            <a href="/packers-movers-sector-13" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 13</a>
+            <a href="/packers-movers-sector-14" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 14</a>
+            <a href="/packers-movers-sector-15" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 15</a>
+            <a href="/packers-movers-model-town" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Model Town</a>
+            <a href="/packers-movers-urban-estate" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Urban Estate</a>
+            <a href="/packers-movers-hisar-cantt" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Hisar Cantt</a>
+          </div>
         </div>
       </div>
 
-      <hr />
-      <div class="footer-two">Copyright © 2026 All Rights Reserved.</div>
-    </div>
+      <div class="border-t border-slate-800 py-4 text-center text-[11px] text-slate-500">
+        Copyright © 2026 Willkommen Packers Movers Azad Nagar Hisar. All Rights Reserved.
+      </div>
+    </footer>
 
-    <!-- Scripts -->
-    <script>
-      function sendToWhatsApp(event) {
-        event.preventDefault();
-
-        let phoneNumber = "918073025732";
-
-        let name = document.getElementById("name").value;
-        let moveType = document.getElementById("move_type").value;
-        let phone = document.getElementById("phone").value;
-        let date = document.getElementById("date").value;
-
-        let message = `*New Quote Request (Azad Nagar)*%0A%0A` +
-                      `*Name:* ${name}%0A` +
-                      `*Move Type:* ${moveType}%0A` +
-                      `*Phone:* ${phone}%0A` +
-                      `*Date:* ${date}`;
-
-        let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.open(whatsappURL, '_blank');
-      }
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

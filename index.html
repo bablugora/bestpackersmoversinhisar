@@ -17,6 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 
@@ -81,7 +85,13 @@
         </a>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold">
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu" class="md:hidden text-amber-400 text-2xl focus:outline-none p-1">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav id="nav-links" class="hidden md:flex items-center space-x-6 text-xs font-semibold">
         <a href="/" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Home</a>
         <a href="/about" class="text-slate-300 hover:text-amber-300 transition-colors">About</a>
         <a href="/services" class="text-slate-300 hover:text-amber-300 transition-colors">Services</a>
@@ -90,7 +100,7 @@
         <a href="https://willkommenpackersmovers.blogspot.com/" target="_blank" rel="noopener" class="text-slate-300 hover:text-amber-300 transition-colors">Blog</a>
       </nav>
 
-      <div class="flex items-center space-x-3">
+      <div class="hidden md:flex items-center space-x-3">
         <a href="/free-shifting-quotation-hisar.html" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-md flex items-center space-x-1.5">
           <span>Get Free Quotation</span>
           <i class="fa-solid fa-arrow-right text-[10px]"></i>
@@ -411,5 +421,27 @@
       </div>
     </footer>
 
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-full');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-slate-900/95');
+            navLinks.classList.toggle('backdrop-blur-md');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('p-6');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('space-x-6'); // override default spacing when column
+            navLinks.classList.toggle('border-b');
+            navLinks.classList.toggle('border-amber-500/20');
+        });
+    </script>
   </body>
 </html>

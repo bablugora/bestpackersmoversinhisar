@@ -62,16 +62,13 @@ body {
 /* ==========================================================================
    2. GRADIENTS & REUSABLE UTILITIES
    ========================================================================== */
-
-/* Gold Gradient Text Class */
 .gold-gradient-text, span {
     background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
-    background-clip: text; /* Standard property for compatibility */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism Card Style */
 .glass-card, .two-one, .four-one, .six-two, .eight-two, .footer {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
@@ -79,7 +76,6 @@ body {
     border: 1px solid var(--border-gold);
 }
 
-/* Ambient Glow Effect */
 .glow-effect {
     box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
 }
@@ -109,6 +105,22 @@ body {
     width: 70%;
     height: auto;
     object-fit: contain;
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--gold-main);
+    border-radius: 2px;
+    transition: 0.3s ease;
 }
 
 .baar-links ul {
@@ -162,8 +174,6 @@ body {
 /* ==========================================================================
    5. HERO & SECTIONS LAYOUT
    ========================================================================== */
-
-/* Section One - Hero */
 .one {
     width: 100%;
     display: flex;
@@ -203,7 +213,6 @@ body {
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
 }
 
-/* Section Two - Highlight Box */
 .two {
     width: 100%;
     display: flex;
@@ -391,14 +400,37 @@ body {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .baar-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border-gold);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .baar-links.active {
+        max-height: 250px;
     }
     
     .baar-links ul {
         flex-direction: column;
-        gap: 12px;
+        width: 100%;
+        padding: 20px 0;
+        gap: 15px;
+        align-items: center;
     }
 
     .one, .two, .three-one, .three-two, .five-two, .five-three, .process-grid, .seven, .eight, .footer {

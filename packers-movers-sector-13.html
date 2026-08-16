@@ -77,7 +77,8 @@
         </a>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold">
+      <!-- Navigation Menu (Mobile Responsive Fixed) -->
+      <nav id="nav-links" class="hidden md:flex flex-col md:flex-row absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-slate-900 md:bg-transparent border-b md:border-none border-amber-500/20 p-6 md:p-0 space-y-4 md:space-y-0 md:space-x-6 text-xs font-semibold shadow-xl md:shadow-none z-50">
         <a href="/" class="text-slate-300 hover:text-amber-300 transition-colors">Home</a>
         <a href="/about" class="text-slate-300 hover:text-amber-300 transition-colors">About</a>
         <a href="/services" class="text-slate-300 hover:text-amber-300 transition-colors">Services</a>
@@ -87,15 +88,18 @@
       </nav>
 
       <div class="flex items-center space-x-3">
-        <a href="/quotation" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-md flex items-center space-x-1.5">
-          <span>Get Free Quotation</span>
-          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        <a href="/quotation" class="hidden sm:flex bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-md items-center space-x-1.5">
+          <span>Get Quote</span>
         </a>
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-button" class="md:hidden text-amber-400 text-2xl focus:outline-none p-1">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </header>
 
     <main class="flex-grow max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-12">
-
+      
       <!-- HERO SECTION -->
       <section class="relative rounded-3xl overflow-hidden border border-amber-500/30 bg-gradient-to-b from-slate-900 via-slate-950 to-brand-navy p-8 md:p-12 glow-effect">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -121,102 +125,32 @@
             </div>
           </div>
           <div class="flex justify-center">
-            <img src="image/sifting.png" alt="Sector 13 Hisar Moving Contact" class="max-h-80 w-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+            <img src="image/sifting.png" alt="Sector 13 Hisar Moving" class="max-h-80 w-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
       </section>
 
-      <!-- HIGHLIGHT SECTION -->
+      <!-- DETAILS SECTION -->
       <section class="glass-card p-8 rounded-3xl space-y-6">
-        <div class="space-y-3">
-          <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100 flex flex-wrap items-center gap-2">
-            <span class="gold-gradient-text">Sector 13 Me Safe Relocation</span>
-            <i class="fa-solid fa-arrow-right text-amber-400 text-xl"></i>
-            <span>No Shifting Tension Anymore!</span>
-          </h2>
-          <div class="w-16 h-1 bg-amber-500 rounded-full"></div>
-        </div>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          <b>Willkommen Packers Movers</b> aapke apne area Sector 13 Hisar me local shifting aur packing ka sabse vishwasniya naam hai. Sector 13 ki residential colonies, main markets aur premium apartments se kisi bhi dusre sector ya city me shift hone ke liye humari expert team tayar hai.
-        </p>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Hum use karte hain <strong>5-Layer Ultra-Protective Packaging</strong> jo aapke electrical appliances aur heavy furniture ko scratch aur damage se bachati hai. Hum local Sector 13 ke narrow streets aur traffic entry rules ko acche se jaante hain, taaki aapka saman bina kisi delay ke bilkul safe deliver ho sake.
-        </p>
-        <div>
-          <a href="/quotation" class="inline-block bg-gradient-to-r from-amber-500 to-yellow-400 hover:brightness-110 text-slate-950 px-6 py-3 rounded-xl font-extrabold text-xs transition shadow-lg">
-            Sector 13 Shifting Slot Book Karein!
-          </a>
-        </div>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100"><span class="gold-gradient-text">Sector 13 Me Safe Relocation</span></h2>
+        <p class="text-slate-300 text-sm leading-relaxed">Willkommen Packers Movers aapke apne area Sector 13 Hisar me local shifting ka sabse vishwasniya naam hai. Hum aapke ghar aur office ka saaman bina kisi breakage ke surakshit tareeqe se shift karte hain.</p>
+        <a href="/quotation" class="inline-block bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 px-6 py-3 rounded-xl font-extrabold text-xs transition shadow-lg">Book Shifting Slot!</a>
       </section>
 
-      <!-- INFO STRIP -->
-      <section class="bg-gradient-to-r from-amber-500/20 via-slate-900 to-amber-500/20 border border-amber-500/30 p-4 rounded-2xl flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-amber-300">
-        <div class="flex items-center space-x-2">
-          <i class="fa-solid fa-shield-halved text-amber-400 text-base"></i>
-          <span>100% Trusted Willkommen Packers Movers in Sector 13</span>
-        </div>
-        <a href="https://wa.me/918073025732" target="_blank" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl transition">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>WhatsApp: 08073025732</span>
-        </a>
+      <!-- WHATSAPP FORM SECTION -->
+      <section class="glass-card p-8 rounded-3xl space-y-4 max-w-xl mx-auto w-full">
+        <h3 class="text-xl font-bold text-amber-300">Request Sector 13 Quote</h3>
+        <form id="whatsappForm" class="space-y-3" onsubmit="sendToWhatsApp(event)">
+          <input type="text" id="name" placeholder="Your Full Name" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+          <input type="text" id="move_type" placeholder="Type of Move" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+          <input type="tel" id="phone" placeholder="Phone Number" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+          <input type="date" id="date" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-extrabold text-xs transition flex items-center justify-center space-x-2">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Get Quote On WhatsApp</span>
+          </button>
+        </form>
       </section>
-
-      <!-- BENEFITS & WHATSAPP FORM SECTION -->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="glass-card p-8 rounded-3xl space-y-4">
-          <span class="text-xs font-extrabold tracking-widest text-amber-400 uppercase">WHY CHOOSE US IN SECTOR 13</span>
-          <h2 class="text-2xl font-serif font-bold text-slate-100">
-            Why We're The Preferred Choice <span class="gold-gradient-text">For Sector 13 Moving</span>
-          </h2>
-          <ul class="space-y-3 text-xs text-slate-300">
-            <li class="flex items-start space-x-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-              <span>Local survey and quick estimation in Sector 13.</span>
-            </li>
-            <li class="flex items-start space-x-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-              <span>Safe, secure transport for fragile items and electronics.</span>
-            </li>
-            <li class="flex items-start space-x-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-              <span>Transparent pricing with zero hidden handling fees.</span>
-            </li>
-            <li class="flex items-start space-x-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-              <span>Experienced crew familiar with Sector 13 routes.</span>
-            </li>
-          </ul>
-          <div class="pt-4 border-t border-slate-800">
-            <span class="text-xs text-slate-400 uppercase font-bold block">Helpline Number</span>
-            <span class="text-xl font-black text-amber-400">+91 8073025732</span>
-          </div>
-        </div>
-
-        <div class="glass-card p-8 rounded-3xl space-y-4">
-          <h3 class="text-xl font-bold text-amber-300">Request Sector 13 Quote</h3>
-          
-          <form id="whatsappForm" class="space-y-3" onsubmit="sendToWhatsApp(event)">
-            <div>
-              <input type="text" id="name" placeholder="Your Full Name" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
-            </div>
-            <div>
-              <input type="text" id="move_type" placeholder="Type of Move (e.g., Home Shifting)" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
-            </div>
-            <div>
-              <input type="tel" id="phone" placeholder="Phone Number" required class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
-            </div>
-            <div>
-              <input type="date" id="date" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 outline-none focus:border-amber-500" />
-            </div>
-            
-            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-extrabold text-xs transition flex items-center justify-center space-x-2 shadow-lg">
-              <i class="fa-brands fa-whatsapp text-base"></i>
-              <span>Get Sector 13 Quote On WhatsApp</span>
-            </button>
-          </form>
-        </div>
-      </section>
-
     </main>
 
     <!-- FOOTER SECTION -->
@@ -254,13 +188,11 @@
         <div class="space-y-3">
           <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Our Local Service Areas</h2>
           <div class="flex flex-wrap gap-2">
+            <a href="/packers-movers-sector-14" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 14</a>
             <a href="/packers-movers-sector-13" class="bg-amber-500 text-slate-950 font-bold px-2.5 py-1 rounded text-[11px]">Sector 13</a>
             <a href="/packers-movers-model-town" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Model Town</a>
             <a href="/packers-movers-hisar-cantt" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Hisar Cantt</a>
             <a href="/packers-movers-azad-nagar-hisar" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Azad Nagar</a>
-            <a href="/packers-movers-sector-14" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 14</a>
-            <a href="/packers-movers-sector-15" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Sector 15</a>
-            <a href="/packers-movers-urban-estate" class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-[11px] text-slate-400 hover:text-amber-300">Urban Estate</a>
           </div>
         </div>
       </div>
@@ -270,24 +202,26 @@
       </div>
     </footer>
 
-    <!-- WhatsApp Redirect Script -->
+    <!-- SCRIPTS -->
     <script>
+      // Mobile Menu Toggle Logic
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const navLinks = document.getElementById('nav-links');
+
+      mobileMenuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+      });
+
+      // WhatsApp Logic
       function sendToWhatsApp(event) {
         event.preventDefault();
         let phoneNumber = "918073025732";
-        let name = document.getElementById("name").value;
-        let moveType = document.getElementById("move_type").value;
-        let phone = document.getElementById("phone").value;
-        let date = document.getElementById("date").value;
-
         let message = `*New Quote Request (Sector 13)*%0A%0A` +
-                      `*Name:* ${name}%0A` +
-                      `*Move Type:* ${moveType}%0A` +
-                      `*Phone:* ${phone}%0A` +
-                      `*Date:* ${date}`;
-
-        let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.open(whatsappURL, '_blank');
+                      `*Name:* ${document.getElementById("name").value}%0A` +
+                      `*Move Type:* ${document.getElementById("move_type").value}%0A` +
+                      `*Phone:* ${document.getElementById("phone").value}%0A` +
+                      `*Date:* ${document.getElementById("date").value}`;
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
       }
     </script>
   </body>

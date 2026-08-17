@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Willkommen Packers & Movers - Quotation Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <!-- PASSWORD PROTECTION SCRIPT -->
+    <script>
+        function checkPassword() {
+            // Aap yahan apna man-chaha password badal sakte hain ("willkommen123" ki jagah)
+            let password = prompt("🔐 Enter Staff Password to Access Quotation Panel:");
+            if (password !== "willkommen123") {
+                alert("❌ Incorrect Password! Access Denied.");
+                window.location.href = "about:blank"; // Galat password hone par page blank ho jayega
+            }
+        }
+        // Page khulte hi password check karega
+        window.onload = checkPassword;
+    </script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded shadow">
+        <h2 class="text-2xl font-bold mb-6 text-blue-600">Create Quotation - Willkommen Packers & Movers</h2>
+        
+        <!-- Input Form -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+                <label class="block text-sm font-semibold mb-1">Quotation No.</label>
+                <input type="text" id="quoteNo" value="WPM/2026/001" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Moving Date</label>
+                <input type="date" id="quoteDate" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Customer Name</label>
+                <input type="text" id="custName" placeholder="Customer Name" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Contact No</label>
+                <input type="text" id="custPhone" placeholder="Contact No" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Moving From</label>
+                <input type="text" id="pickup" placeholder="Pickup Address" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Moving To</label>
+                <input type="text" id="drop" placeholder="Drop Address" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Vehicle Type</label>
+                <input type="text" id="vehicle" placeholder="e.g. 1 BHK / Mini Truck" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Customer Photo</label>
+                <input type="file" id="custImage" accept="image/*" class="border p-2 rounded w-full bg-white text-xs">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Packing Charges (₹)</label>
+                <input type="number" id="packing" value="0" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Loading/Unloading (₹)</label>
+                <input type="number" id="loading" value="0" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Transportation (₹)</label>
+                <input type="number" id="transport" value="0" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Insurance (%)</label>
+                <select id="insuranceRate" class="border p-2 rounded w-full bg-white">
+                    <option value="0" selected>0%</option>
+                    <option value="2">2%</option>
+                    <option value="3">3%</option>
+                    <option value="5">5%</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">Discount (₹)</label>
+                <input type="number" id="discount" value="0" class="border p-2 rounded w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-1">GST (%)</label>
+                <select id="gstRate" class="border p-2 rounded w-full bg-white">
+                    <option value="0">0%</option>
+                    <option value="5" selected>5%</option>
+                    <option value="12">12%</option>
+                    <option value="18">18%</option>
+                </select>
+            </div>
+            <div class="col-span-2">
+                <label class="block text-sm font-semibold mb-1">Advance Paid (₹)</label>
+                <input type="number" id="advance" value="0" class="border p-2 rounded w-full">
+            </div>
+        </div>
+
+        <button onclick="generatePDF()" class="bg-blue-600 text-white px-6 py-3 rounded font-bold hover:bg-blue-700 w-full shadow-lg">Download Professional Quotation PDF & Save to Office</button>
+    </div>
+
+    <!-- Hidden Template for PDF -->
+    <div id="invoice" class="max-w-4xl mx-auto bg-white p-8 mt-6 hidden border text-gray-800">
+        <div class="text-center border-b pb-4 mb-4">
+            <h1 class="text-3xl font-extrabold text-blue-800">WILLKOMMEN PACKERS & MOVERS</h1>
+            <p class="text-sm font-medium text-gray-600">Reliable & Safe Relocation Services</p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-6 border-b pb-4 items-center">
+            <div class="col-span-2 space-y-1 text-sm">
+                <p><strong>Quotation No:</strong> <span id="lblQuoteNo"></span></p>
+                <p><strong>Customer Name:</strong> <span id="lblCustName"></span></p>
+                <p><strong>Contact No:</strong> <span id="lblCustPhone"></span></p>
+                <p><strong>Vehicle Type:</strong> <span id="lblVehicle"></span></p>
+                <p><strong>Moving Date:</strong> <span id="lblDate"></span></p>
+                <p><strong>Pickup:</strong> <span id="lblPickup"></span></p>
+                <p><strong>Drop:</strong> <span id="lblDrop"></span></p>
+            </div>
+            <div id="imageContainer" class="hidden text-center">
+                <img id="lblImage" class="w-24 h-24 object-cover mx-auto border shadow rounded" src="">
+            </div>
+        </div>
+
+        <table class="w-full border-collapse border border-gray-300 mb-6 text-sm">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border border-gray-300 p-2 text-left">S.No.</th>
+                    <th class="border border-gray-300 p-2 text-left">Description</th>
+                    <th class="border border-gray-300 p-2 text-right">Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 p-2">1</td>
+                    <td class="border border-gray-300 p-2">Packing Charges</td>
+                    <td class="border border-gray-300 p-2 text-right" id="lblPacking">0</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 p-2">2</td>
+                    <td class="border border-gray-300 p-2">Loading & Unloading</td>
+                    <td class="border border-gray-300 p-2 text-right" id="lblLoading">0</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 p-2">3</td>
+                    <td class="border border-gray-300 p-2">Transportation</td>
+                    <td class="border border-gray-300 p-2 text-right" id="lblTransport">0</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 p-2">4</td>
+                    <td class="border border-gray-300 p-2">Insurance (<span id="lblInsurancePercent">0</span>%)</td>
+                    <td class="border border-gray-300 p-2 text-right" id="lblInsurance">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="flex justify-end mb-8 text-sm">
+            <div class="w-1/2 space-y-1 text-right">
+                <p>Sub Total: ₹ <span id="lblSubTotal">0</span></p>
+                <p>Discount: - ₹ <span id="lblDiscount">0</span></p>
+                <p>GST (<span id="lblGstPercent">5</span>%): + ₹ <span id="lblGst">0</span></p>
+                <p class="text-base font-bold border-t pt-1">Grand Total: ₹ <span id="lblTotal">0</span></p>
+                <p>Advance Paid: ₹ <span id="lblAdvance">0</span></p>
+                <p class="text-lg font-bold text-blue-700 border-t pt-1">Balance Due (on delivery): ₹ <span id="lblBalance">0</span></p>
+            </div>
+        </div>
+
+        <div class="text-[10px] text-gray-700 leading-relaxed mb-8">
+            <p class="font-bold text-xs mb-1 underline">Terms & Conditions:</p>
+            <p>1. <strong>Advance Payment:</strong> Shifting se pehle advance dena hoga. Bacha hua payment delivery ke turant baad dena hoga.</p>
+            <p>2. <strong>Transit Risk:</strong> Company safety ke sath samaan shift karti hai, lekin goods ki safety/insurance ke rules company policy ke anusar honge.</p>
+            <p>3. <strong>Prohibited Items:</strong> Cash, jewellery, important documents, aur flammable items customer ko apne sath khud carry karne honge. Company inki zimmedari nahi legi.</p>
+            <p>4. <strong>Taxes:</strong> Toll tax, parking charges, ya state entry tax agar raste mein lagenge, toh wo bill mein alag se jude honge.</p>
+        </div>
+
+        <div class="flex justify-between text-xs mt-4">
+            <div class="text-center">
+                <br><br>___________________________<br><strong>Customer's Signature</strong>
+            </div>
+            <div class="text-center">
+                <br><br>___________________________<br><strong>For Willkommen Packers & Movers</strong><br>(Authorized Signatory)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('quoteDate').valueAsDate = new Date();
+
+        function calculateValues() {
+            let p = parseFloat(document.getElementById('packing').value) || 0;
+            let l = parseFloat(document.getElementById('loading').value) || 0;
+            let t = parseFloat(document.getElementById('transport').value) || 0;
+            let disc = parseFloat(document.getElementById('discount').value) || 0;
+            
+            let baseTotal = p + l + t;
+            let insP = parseFloat(document.getElementById('insuranceRate').value) || 0;
+            let insA = (baseTotal * insP) / 100;
+            
+            let sub = baseTotal + insA;
+            let taxable = Math.max(sub - disc, 0);
+            
+            let gstP = parseFloat(document.getElementById('gstRate').value) || 0;
+            let gstA = (taxable * gstP) / 100;
+            
+            let total = taxable + gstA;
+            let adv = parseFloat(document.getElementById('advance').value) || 0;
+            let bal = Math.max(total - adv, 0);
+
+            return { baseTotal, insA, sub, insP, gstA, total, gstP, bal, disc, adv };
+        }
+
+        function generatePDF() {
+            let val = calculateValues();
+            
+            document.getElementById('lblQuoteNo').innerText = document.getElementById('quoteNo').value;
+            document.getElementById('lblDate').innerText = document.getElementById('quoteDate').value;
+            document.getElementById('lblCustName').innerText = document.getElementById('custName').value;
+            document.getElementById('lblCustPhone').innerText = document.getElementById('custPhone').value;
+            document.getElementById('lblVehicle').innerText = document.getElementById('vehicle').value;
+            document.getElementById('lblPickup').innerText = document.getElementById('pickup').value;
+            document.getElementById('lblDrop').innerText = document.getElementById('drop').value;
+
+            document.getElementById('lblPacking').innerText = document.getElementById('packing').value;
+            document.getElementById('lblLoading').innerText = document.getElementById('loading').value;
+            document.getElementById('lblTransport').innerText = document.getElementById('transport').value;
+            
+            document.getElementById('lblInsurance').innerText = val.insA.toFixed(2);
+            document.getElementById('lblInsurancePercent').innerText = val.insP;
+            document.getElementById('lblSubTotal').innerText = val.sub.toFixed(2);
+            document.getElementById('lblDiscount').innerText = val.disc;
+            document.getElementById('lblGst').innerText = val.gstA.toFixed(2);
+            document.getElementById('lblGstPercent').innerText = val.gstP;
+            document.getElementById('lblTotal').innerText = val.total.toFixed(2);
+            document.getElementById('lblAdvance').innerText = val.adv;
+            document.getElementById('lblBalance').innerText = val.bal.toFixed(2);
+
+            // Google Sheet Data Save Call
+            sendDataToGoogleSheet(val);
+
+            let imgFile = document.getElementById('custImage').files[0];
+            if (imgFile) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('lblImage').src = e.target.result;
+                    document.getElementById('imageContainer').classList.remove('hidden');
+                    exportPDF();
+                }
+                reader.readAsDataURL(imgFile);
+            } else {
+                document.getElementById('imageContainer').classList.add('hidden');
+                exportPDF();
+            }
+        }
+
+        function sendDataToGoogleSheet(val) {
+            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxd2_PXBnTWSX89o2hxzqOmDSybr9jHkugwyqpYnYGoA3cgwBY1EIFOsqCPQax_SSSo/exec";
+
+            let formData = {
+                quoteNo: document.getElementById('quoteNo').value,
+                date: document.getElementById('quoteDate').value,
+                custName: document.getElementById('custName').value,
+                custPhone: document.getElementById('custPhone').value,
+                pickup: document.getElementById('pickup').value,
+                drop: document.getElementById('drop').value,
+                vehicle: document.getElementById('vehicle').value,
+                grandTotal: val.total.toFixed(2),
+                advance: val.adv,
+                balance: val.bal.toFixed(2)
+            };
+
+            fetch(WEB_APP_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            }).catch(err => console.log("Sheet Error: ", err));
+        }
+
+        function exportPDF() {
+            let el = document.getElementById('invoice');
+            el.classList.remove('hidden');
+            
+            let opt = {
+                margin:       10,
+                filename:     'Willkommen_Quotation_' + document.getElementById('quoteNo').value.replace(/\//g, '_') + '.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().from(el).set(opt).save().then(() => {
+                el.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

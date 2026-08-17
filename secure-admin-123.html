@@ -254,8 +254,8 @@
             }
         }
 
-        function sendDataToGoogleSheet(val) {
-            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxd2_PXBnTWSX89o2hxzqOmDSybr9jHkugwyqpYnYGoA3cgwBY1EIFOsqCPQax_SSSo/exec";
+       function sendDataToGoogleSheet(val) {
+            const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJT8wwMbDyP1KBPN0mSEjVAggv0UOeeYhDEKNNh_bgG8uS-PaOZJCi7ZGlb3P5AUWZ/exec";
 
             let formData = {
                 quoteNo: document.getElementById('quoteNo').value,
@@ -265,6 +265,12 @@
                 pickup: document.getElementById('pickup').value,
                 drop: document.getElementById('drop').value,
                 vehicle: document.getElementById('vehicle').value,
+                // Ye naye fields hain
+                packing: document.getElementById('packing').value,
+                loading: document.getElementById('loading').value,
+                transport: document.getElementById('transport').value,
+                insurance: val.insA.toFixed(2), // Calculation se aayi hui value
+                gst: val.gstA.toFixed(2),       // Calculation se aayi hui value
                 grandTotal: val.total.toFixed(2),
                 advance: val.adv,
                 balance: val.bal.toFixed(2)
@@ -277,7 +283,6 @@
                 body: JSON.stringify(formData)
             }).catch(err => console.log("Sheet Error: ", err));
         }
-
         function exportPDF() {
             let el = document.getElementById('invoice');
             el.classList.remove('hidden');

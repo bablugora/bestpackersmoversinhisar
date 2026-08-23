@@ -381,28 +381,54 @@
         function calculateCost(e) {
             e.preventDefault();
             const moveType = document.getElementById('moveType').value;
-            const toCity = document.getElementById('toCity').value.trim();
+            const toCityInput = document.getElementById('toCity').value.trim().toLowerCase();
             const resultBox = document.getElementById('costResult');
             const priceVal = document.getElementById('priceValue');
             const waBtn = document.getElementById('waQuoteBtn');
 
+            // Base local cost in Hisar
             let base = 4500;
             if (moveType === '1bhk') base = 6500;
-            if (moveType === '2bhk') base = 9500;
-            if (moveType === '3bhk') base = 16000;
-            if (moveType === 'office') base = 18000;
+            if (moveType === '2bhk') base = 10500;
+            if (moveType === '3bhk') base = 16500;
+            if (moveType === 'office') base = 22000;
+            if (moveType === 'vehicle') base = 4500;
 
-            const isIntercity = toCity.toLowerCase() !== 'hisar';
-            if (isIntercity) base += 5000;
+            const isIntercity = toCityInput !== 'hisar' && toCityInput !== '';
+
+            if (isIntercity) {
+                if (toCityInput.includes('delhi') || toCityInput.includes('gurgaon') || toCityInput.includes('gurugram') || toCityInput.includes('rohtak') || toCityInput.includes('sirsa')) {
+                    if (moveType === '1bhk') base = 12000;
+                    else if (moveType === '2bhk') base = 18000;
+                    else if (moveType === '3bhk') base = 26000;
+                    else if (moveType === 'vehicle') base = 6000;
+                    else base = 25000;
+                } 
+                else if (toCityInput.includes('chandigarh') || toCityInput.includes('jaipur')) {
+                    if (moveType === '1bhk') base = 15000;
+                    else if (moveType === '2bhk') base = 22000;
+                    else if (moveType === '3bhk') base = 32000;
+                    else if (moveType === 'vehicle') base = 8000;
+                    else base = 30000;
+                } 
+                else {
+                    if (moveType === '1bhk') base = 25000;
+                    else if (moveType === '2bhk') base = 38000;
+                    else if (moveType === '3bhk') base = 55000;
+                    else if (moveType === 'vehicle') base = 14000;
+                    else base = 50000;
+                }
+            }
 
             const minCost = base;
-            const maxCost = Math.round(base * 1.35);
+            const maxCost = Math.round(base * 1.25);
 
             priceVal.innerText = `₹ ${minCost.toLocaleString('en-IN')} - ₹ ${maxCost.toLocaleString('en-IN')}`;
             resultBox.classList.remove('hidden');
             waBtn.classList.remove('hidden');
 
-            const waMsg = `Hi Willkommen Packers Hisar, I want to book relocation from Hisar to ${toCity} (${moveType}). Estimated budget: ₹${minCost} - ₹${maxCost}`;
+            const toCityClean = document.getElementById('toCity').value.trim();
+            const waMsg = `Hi Willkommen Packers Hisar, I want to book relocation from Hisar to ${toCityClean} (${moveType}). Estimated budget: ₹${minCost.toLocaleString('en-IN')} - ₹${maxCost.toLocaleString('en-IN')}`;
             waBtn.href = `https://wa.me/918073025732?text=${encodeURIComponent(waMsg)}`;
         }
     </script>

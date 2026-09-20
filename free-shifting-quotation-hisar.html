@@ -257,6 +257,7 @@
                     <span class="text-xs text-amber-300 uppercase font-semibold">Estimated Price Range</span>
                     <div id="priceValue" class="text-2xl font-black text-amber-400">₹ 8,500 - ₹ 12,000</div>
                     <p class="text-[10px] text-slate-400">*Includes Loading, Unloading, Packing & Transit Insurance</p>
+                    <p class="text-[9px] text-amber-200/60">*T&C Apply: Final quote may vary based on actual floor stairs, heavy items & exact distance.</p>
                 </div>
 
                 <div class="flex items-center space-x-3 pt-2">
@@ -403,9 +404,9 @@
         finalCost = base;
     } else {
         // Intercity / Extra KM rate (e.g., ₹30 to ₹50 extra per KM depending on vehicle/load size)
-        let ratePerKm = 30;
-        if (moveType === '3bhk' || moveType === 'office') ratePerKm = 50;
-        if (moveType === 'vehicle') ratePerKm = 20; // Lower rate for vehicle transport
+        let ratePerKm = 35;
+        if (moveType === '3bhk' || moveType === 'office') ratePerKm = 55;
+        if (moveType === 'vehicle') ratePerKm = 25;
 
         finalCost = base + (km * ratePerKm);
     }

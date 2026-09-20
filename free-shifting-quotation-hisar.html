@@ -233,16 +233,16 @@
                     </select>
                 </div>
 
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-slate-300 font-semibold mb-1">From City</label>
-                        <input type="text" id="fromCity" value="Hisar" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-slate-300 font-semibold mb-1">To City</label>
-                        <input type="text" id="toCity" placeholder="e.g. Delhi, Gurugram, Chandigarh" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none" required>
-                    </div>
-                </div>
+               <div class="grid grid-cols-2 gap-3">
+    <div>
+        <label class="block text-slate-300 font-semibold mb-1">From City</label>
+        <input type="text" id="fromCity" value="Hisar" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
+    </div>
+    <div>
+        <label class="block text-slate-300 font-semibold mb-1">Distance (in KM)</label>
+        <input type="number" id="distanceKM" placeholder="e.g. 10, 50, 150" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none" required>
+    </div>
+</div>
 
                 <div>
                     <label class="block text-slate-300 font-semibold mb-1">Packing Quality</label>
@@ -379,58 +379,47 @@
         }
 
         function calculateCost(e) {
-            e.preventDefault();
-            const moveType = document.getElementById('moveType').value;
-            const toCityInput = document.getElementById('toCity').value.trim().toLowerCase();
-            const resultBox = document.getElementById('costResult');
-            const priceVal = document.getElementById('priceValue');
-            const waBtn = document.getElementById('waQuoteBtn');
+    e.preventDefault();
+    const moveType = document.getElementById('moveType').value;
+    const km = parseFloat(document.getElementById('distanceKM').value) || 0;
+    const resultBox = document.getElementById('costResult');
+    const priceVal = document.getElementById('priceValue');
+    const waBtn = document.getElementById('waQuoteBtn');
 
-            // Base local cost in Hisar
-            let base = 4500;
-            if (moveType === '1bhk') base = 6500;
-            if (moveType === '2bhk') base = 10500;
-            if (moveType === '3bhk') base = 16500;
-            if (moveType === 'office') base = 22000;
-            if (moveType === 'vehicle') base = 4500;
+    let base = 4500;
 
-            const isIntercity = toCityInput !== 'hisar' && toCityInput !== '';
+    // Item/BHK wise base handling
+    let vehicleMultiplier = 1;
+    if (moveType === '1bhk') base = 4500;
+    else if (moveType === '2bhk') base = 8500;
+    else if (moveType === '3bhk') base = 10000;
+    else if (moveType === 'office') base = 15000;
+    else if (moveType === 'vehicle') base = 4000;
 
-            if (isIntercity) {
-                if (toCityInput.includes('delhi') || toCityInput.includes('gurgaon') || toCityInput.includes('gurugram') || toCityInput.includes('rohtak') || toCityInput.includes('sirsa')) {
-                    if (moveType === '1bhk') base = 12000;
-                    else if (moveType === '2bhk') base = 18000;
-                    else if (moveType === '3bhk') base = 26000;
-                    else if (moveType === 'vehicle') base = 6000;
-                    else base = 25000;
-                } 
-                else if (toCityInput.includes('chandigarh') || toCityInput.includes('jaipur')) {
-                    if (moveType === '1bhk') base = 15000;
-                    else if (moveType === '2bhk') base = 22000;
-                    else if (moveType === '3bhk') base = 32000;
-                    else if (moveType === 'vehicle') base = 8000;
-                    else base = 30000;
-                } 
-                else {
-                    if (moveType === '1bhk') base = 25000;
-                    else if (moveType === '2bhk') base = 38000;
-                    else if (moveType === '3bhk') base = 55000;
-                    else if (moveType === 'vehicle') base = 14000;
-                    else base = 50000;
-                }
-            }
+    let finalCost = 0;
 
-            const minCost = base;
-            const maxCost = Math.round(base * 1.25);
+    if (km <= 10) {
+        // Local shifting within city (upto 10 KM)
+        finalCost = base;
+    } else {
+        // Intercity / Extra KM rate (e.g., ₹30 to ₹50 extra per KM depending on vehicle/load size)
+        let ratePerKm = 30;
+        if (moveType === '3bhk' || moveType === 'office') ratePerKm = 50;
+        if (moveType === 'vehicle') ratePerKm = 20; // Lower rate for vehicle transport
 
-            priceVal.innerText = `₹ ${minCost.toLocaleString('en-IN')} - ₹ ${maxCost.toLocaleString('en-IN')}`;
-            resultBox.classList.remove('hidden');
-            waBtn.classList.remove('hidden');
+        finalCost = base + (km * ratePerKm);
+    }
 
-            const toCityClean = document.getElementById('toCity').value.trim();
-            const waMsg = `Hi Willkommen Packers Hisar, I want to book relocation from Hisar to ${toCityClean} (${moveType}). Estimated budget: ₹${minCost.toLocaleString('en-IN')} - ₹${maxCost.toLocaleString('en-IN')}`;
-            waBtn.href = `https://wa.me/918073025732?text=${encodeURIComponent(waMsg)}`;
-        }
+    const minCost = Math.round(finalCost);
+    const maxCost = Math.round(finalCost * 1.20); // 20% buffer range
+
+    priceVal.innerText = `₹ ${minCost.toLocaleString('en-IN')} - ₹ ${maxCost.toLocaleString('en-IN')}`;
+    resultBox.classList.remove('hidden');
+    waBtn.classList.remove('hidden');
+
+    const waMsg = `Hi Willkommen Packers Hisar, I want to book relocation for ${moveType} for ${km} KM distance. Estimated budget: ₹${minCost.toLocaleString('en-IN')} - ₹${maxCost.toLocaleString('en-IN')}`;
+    waBtn.href = `https://wa.me/918073025732?text=${encodeURIComponent(waMsg)}`;
+}
     </script>
 </body>
 </html>

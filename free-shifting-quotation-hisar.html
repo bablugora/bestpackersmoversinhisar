@@ -94,13 +94,9 @@
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center p-4 lg:p-8 relative overflow-hidden">
-
         <div id="banner-container" class="relative w-full max-w-6xl rounded-3xl overflow-hidden border border-amber-500/30 bg-gradient-to-b from-slate-900 via-slate-950 to-brand-navy shadow-2xl transition-all duration-500 my-4 glow-effect">
-            
             <canvas id="bgCanvas"></canvas>
-
             <div class="relative z-10 p-6 md:p-12 flex flex-col justify-between min-h-[580px]">
-
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-amber-500/20 pb-6">
                     <div class="flex items-center space-x-4">
                         <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-600 to-amber-800 p-[2px] shadow-xl">
@@ -115,98 +111,26 @@
                             <h2 class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Hisar's #1 Relocation Experts</h2>
                         </div>
                     </div>
-
-                    <div class="flex flex-wrap items-center gap-3 text-xs">
-                        <div class="bg-slate-900/80 backdrop-blur px-3 py-1.5 rounded-lg border border-slate-800 flex items-center space-x-2">
-                            <i class="fa-solid fa-truck-moving text-amber-400"></i>
-                            <span>5000+ Safe Moves</span>
-                        </div>
-                        <div class="bg-slate-900/80 backdrop-blur px-3 py-1.5 rounded-lg border border-slate-800 flex items-center space-x-2">
-                            <i class="fa-solid fa-boxes-packing text-amber-400"></i>
-                            <span>3-Layer Bubble Wrap</span>
-                        </div>
-                        <div class="bg-slate-900/80 backdrop-blur px-3 py-1.5 rounded-lg border border-slate-800 flex items-center space-x-2">
-                            <i class="fa-solid fa-globe text-amber-400"></i>
-                            <span>All-India & Global</span>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="my-8 text-center max-w-4xl mx-auto space-y-4">
-                    <div class="inline-flex items-center justify-center space-x-3 mb-2">
-                        <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-amber-500"></div>
-                        <i class="fa-solid fa-crown text-amber-400 text-xl"></i>
-                        <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-amber-500"></div>
-                    </div>
-
-                    <h1 id="hero-title" class="text-3xl md:text-6xl font-serif font-extrabold tracking-wide uppercase leading-tight gold-gradient-text drop-shadow-lg">
+                    <h1 class="text-3xl md:text-6xl font-serif font-extrabold tracking-wide uppercase leading-tight gold-gradient-text drop-shadow-lg">
                         WILLKOMMEN
                     </h1>
                     <p class="text-lg md:text-2xl font-bold tracking-widest text-amber-200 uppercase font-sans">
                         PACKERS & MOVERS
                     </p>
-
-                    <div class="inline-block bg-slate-900/90 border border-amber-500/40 rounded-full px-6 py-2 text-sm font-semibold text-amber-300 shadow-inner mt-2">
-                        ✨ PREMIUM GLOBAL LOGISTICS & HOME RELOCATION SOLUTIONS
-                    </div>
-
-                    <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
-                        Your Safest, Most Precise Move. We take complete care of Household Shifting, Car & Bike Transport, Office Relocation, and Secure Storage Facilities in Hisar & Worldwide.
-                    </p>
+                    <button onclick="openModal('quoteModal')" class="bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-slate-950 px-8 py-4 rounded-xl font-extrabold text-base transition shadow-xl hover:scale-105">
+                        <i class="fa-solid fa-calculator mr-2"></i> Open Quick Cost Estimator
+                    </button>
                 </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-4">
-                    <div class="glass-panel p-3 rounded-xl text-center hover:border-amber-500/60 transition group">
-                        <i class="fa-solid fa-house-chimney-window text-amber-400 text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="text-xs font-bold text-slate-200">Home Shifting</h4>
-                        <p class="text-[10px] text-slate-400">Door to Door Safe</p>
-                    </div>
-                    <div class="glass-panel p-3 rounded-xl text-center hover:border-amber-500/60 transition group">
-                        <i class="fa-solid fa-warehouse text-amber-400 text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="text-xs font-bold text-slate-200">Containerized Moving</h4>
-                        <p class="text-[10px] text-slate-400">Weatherproof Trucks</p>
-                    </div>
-                    <div class="glass-panel p-3 rounded-xl text-center hover:border-amber-500/60 transition group">
-                        <i class="fa-solid fa-car text-amber-400 text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="text-xs font-bold text-slate-200">Vehicle Carrier</h4>
-                        <p class="text-[10px] text-slate-400">Car & Bike Shifting</p>
-                    </div>
-                    <div class="glass-panel p-3 rounded-xl text-center hover:border-amber-500/60 transition group">
-                        <i class="fa-solid fa-boxes-stacked text-amber-400 text-2xl mb-1 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="text-xs font-bold text-slate-200">Storage & Warehousing</h4>
-                        <p class="text-[10px] text-slate-400">24x7 CCTV Secured</p>
-                    </div>
-                </div>
-
-                <div class="pt-6 border-t border-amber-500/20 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                            <i class="fa-solid fa-globe text-lg"></i>
-                        </div>
-                        <div>
-                            <span class="text-[10px] text-slate-400 block uppercase font-bold tracking-wider">Official Website</span>
-                           <a href="https://www.bestpackersmoversinhisar.in" target="_blank" class="text-sm font-bold text-amber-300 hover:text-amber-400 transition">BESTPACKERSMOVERSINHISAR.IN</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-3 w-full md:w-auto">
-                        <a href="tel:+918073025732" class="flex-1 md:flex-none text-center bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:brightness-110 text-slate-950 px-6 py-3 rounded-xl font-extrabold text-sm transition shadow-lg flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-phone"></i>
-                            <span id="phone-num">+91 8073025732</span>
-                        </a>
-                        <a href="https://wa.me/918073025732?text=Hello%20Willkommen%20Packers%20and%20Movers,%20I%20need%20a%20relocation%20quote" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white p-3 rounded-xl font-bold transition shadow-lg flex items-center justify-center">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
-
     </main>
 
-    <div id="quoteModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-amber-500/30 w-full max-w-lg rounded-2xl p-6 relative shadow-2xl">
+    <!-- Modal Estimator -->
+    <div id="quoteModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-amber-500/30 w-full max-w-lg rounded-2xl p-6 relative shadow-2xl my-8">
             <button onclick="closeModal('quoteModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -222,29 +146,84 @@
             </div>
 
             <form onsubmit="calculateCost(event)" class="space-y-4 text-xs">
+                
+                <!-- 1. Service Category Selection -->
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">Select Relocation Type</label>
-                    <select id="moveType" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
-                        <option value="1bhk">1 BHK Household Shifting</option>
-                        <option value="2bhk" selected>2 BHK Household Shifting</option>
-                        <option value="3bhk">3 BHK / Villa Shifting</option>
-                        <option value="vehicle">Only Bike / Car Shifting</option>
-                        <option value="office">Office / Commercial Move</option>
+                    <label class="block text-slate-300 font-semibold mb-1">Select Service Category</label>
+                    <select id="serviceCategory" onchange="toggleServiceFields()" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
+                        <option value="household">Household Goods Shifting</option>
+                        <option value="vehicle">Car / Bike Transportation</option>
+                        <option value="office">Office / Commercial Shifting</option>
                     </select>
                 </div>
 
-               <div class="grid grid-cols-2 gap-3">
-    <div>
-        <label class="block text-slate-300 font-semibold mb-1">From City</label>
-        <input type="text" id="fromCity" value="Hisar" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
-    </div>
-    <div>
-        <label class="block text-slate-300 font-semibold mb-1">Distance (in KM)</label>
-        <input type="number" id="distanceKM" placeholder="e.g. 10, 50, 150" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none" required>
-    </div>
-</div>
+                <!-- Household Specific: Relocation Type (1BHK, 2BHK, 3BHK) -->
+                <div id="householdTypeSection">
+                    <label class="block text-slate-300 font-semibold mb-1">Select Relocation Type</label>
+                    <select id="moveType" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
+                        <option value="1bhk">1 BHK Household Shifting - Tata Ace (Chota Hathi)</option>
+                        <option value="2bhk">2 BHK Household Shifting - Pickup / Tata 407</option>
+                        <option value="3bhk">3 BHK / Villa Shifting - 17ft to 32ft Truck</option>
+                    </select>
+                </div>
 
+                <!-- Floor & Lift Options (Only for Household & Office) -->
+                <div id="floorSection" class="space-y-3">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-slate-300 font-semibold mb-1">Pickup Floor</label>
+                            <select id="pickupFloor" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200">
+                                <option value="0">Ground Floor</option>
+                                <option value="1">1st Floor</option>
+                                <option value="2">2nd Floor</option>
+                                <option value="3">3rd Floor</option>
+                                <option value="4">4th Floor</option>
+                                <option value="5">5th Floor & Above</option>
+                            </select>
+                            <div class="mt-2 flex items-center space-x-2">
+                                <input type="checkbox" id="pickupLift" class="w-4 h-4 rounded bg-slate-950 border-slate-700 text-amber-500 focus:ring-amber-500">
+                                <label for="pickupLift" class="text-[11px] text-slate-300 font-medium">Lift Available</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 font-semibold mb-1">Unloading Floor</label>
+                            <select id="dropFloor" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200">
+                                <option value="0">Ground Floor</option>
+                                <option value="1">1st Floor</option>
+                                <option value="2">2nd Floor</option>
+                                <option value="3">3rd Floor</option>
+                                <option value="4">4th Floor</option>
+                                <option value="5">5th Floor & Above</option>
+                            </select>
+                            <div class="mt-2 flex items-center space-x-2">
+                                <input type="checkbox" id="dropLift" class="w-4 h-4 rounded bg-slate-950 border-slate-700 text-amber-500 focus:ring-amber-500">
+                                <label for="dropLift" class="text-[11px] text-slate-300 font-medium">Lift Available</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- From City & Distance -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-slate-300 font-semibold mb-1">From City</label>
+                        <input type="text" id="fromCity" value="Hisar" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 font-semibold mb-1">Distance (in KM)</label>
+                        <input type="number" id="distanceKM" placeholder="e.g. 10, 50, 150" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none" required>
+                    </div>
+                </div>
+
+                <!-- Declared Goods Value for 2% Insurance -->
                 <div>
+                    <label class="block text-slate-300 font-semibold mb-1">Declared Goods Value (₹) for Insurance</label>
+                    <input type="number" id="goodsValue" placeholder="e.g. 100000" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
+                    <p class="text-[10px] text-slate-400 mt-1">*Transit Insurance @ 2% of declared value will be added automatically.</p>
+                </div>
+
+                <!-- Packing Quality -->
+                <div id="packingSection">
                     <label class="block text-slate-300 font-semibold mb-1">Packing Quality</label>
                     <select id="packingType" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-200 focus:border-amber-500 outline-none">
                         <option value="std">Standard Packing (Corrugated Boxes)</option>
@@ -253,13 +232,15 @@
                     </select>
                 </div>
 
+                <!-- Result Box -->
                 <div id="costResult" class="hidden p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl text-center space-y-1">
                     <span class="text-xs text-amber-300 uppercase font-semibold">Estimated Price Range</span>
-                    <div id="priceValue" class="text-2xl font-black text-amber-400">₹ 8,500 - ₹ 12,000</div>
-                    <p class="text-[10px] text-slate-400">*Includes Loading, Unloading, Packing & Transit Insurance</p>
-                    <p class="text-[9px] text-amber-200/60">*T&C Apply: Final quote may vary based on actual floor stairs, heavy items & exact distance.</p>
+                    <div id="priceValue" class="text-2xl font-black text-amber-400">₹ 0</div>
+                    <p class="text-[10px] text-slate-400">*Includes Loading, Unloading, Packing & 2% Transit Insurance</p>
+                    <p class="text-[9px] text-amber-200/60">*T&C Apply: Final quote may vary based on exact items & distance.</p>
                 </div>
 
+                <!-- Action Buttons -->
                 <div class="flex items-center space-x-3 pt-2">
                     <button type="submit" class="flex-1 bg-amber-500 hover:bg-amber-400 text-slate-950 py-3 rounded-xl font-bold text-sm transition">
                         Calculate Estimate
@@ -284,8 +265,10 @@
 
         function resizeCanvas() {
             const container = document.getElementById('banner-container');
-            canvas.width = container.clientWidth;
-            canvas.height = container.clientHeight;
+            if(container) {
+                canvas.width = container.clientWidth;
+                canvas.height = container.clientHeight;
+            }
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
@@ -325,7 +308,6 @@
 
         function animateCanvas() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
             ctx.strokeStyle = 'rgba(212, 175, 55, 0.05)';
             ctx.lineWidth = 1;
             for (let i = 0; i < particles.length; i++) {
@@ -341,7 +323,6 @@
                     }
                 }
             }
-
             particles.forEach(p => {
                 p.update();
                 p.draw();
@@ -379,48 +360,89 @@
             document.getElementById(id).classList.add('hidden');
         }
 
+        // Toggle fields based on service selection
+        function toggleServiceFields() {
+            const serviceCat = document.getElementById('serviceCategory').value;
+            const householdSection = document.getElementById('householdTypeSection');
+            const floorSection = document.getElementById('floorSection');
+            const packingSection = document.getElementById('packingSection');
+
+            if (serviceCat === 'vehicle') {
+                householdSection.style.display = 'none';
+                floorSection.style.display = 'none';
+                packingSection.style.display = 'none';
+            } else if (serviceCat === 'office') {
+                householdSection.style.display = 'none';
+                floorSection.style.display = 'block';
+                packingSection.style.display = 'block';
+            } else {
+                householdSection.style.display = 'block';
+                floorSection.style.display = 'block';
+                packingSection.style.display = 'block';
+            }
+        }
+
         function calculateCost(e) {
-    e.preventDefault();
-    const moveType = document.getElementById('moveType').value;
-    const km = parseFloat(document.getElementById('distanceKM').value) || 0;
-    const resultBox = document.getElementById('costResult');
-    const priceVal = document.getElementById('priceValue');
-    const waBtn = document.getElementById('waQuoteBtn');
+            e.preventDefault();
+            const serviceCat = document.getElementById('serviceCategory').value;
+            const moveType = document.getElementById('moveType').value;
+            const km = parseFloat(document.getElementById('distanceKM').value) || 0;
+            const resultBox = document.getElementById('costResult');
+            const priceVal = document.getElementById('priceValue');
+            const waBtn = document.getElementById('waQuoteBtn');
 
-    let base = 4500;
+            let base = 3500;
 
-    // Item/BHK wise base handling
-    let vehicleMultiplier = 1;
-    if (moveType === '1bhk') base = 4500;
-    else if (moveType === '2bhk') base = 8500;
-    else if (moveType === '3bhk') base = 10000;
-    else if (moveType === 'office') base = 15000;
-    else if (moveType === 'vehicle') base = 4000;
+            if (serviceCat === 'vehicle') {
+                base = 4000;
+            } else if (serviceCat === 'office') {
+                base = 15000;
+            } else {
+                if (moveType === '1bhk') base = 3500;
+                else if (moveType === '2bhk') base = 7500;
+                else if (moveType === '3bhk') base = 10000;
+            }
 
-    let finalCost = 0;
+            // Floor & Extra Labor calculation (if applicable)
+           // Floor & Extra Labor calculation (Starts charging from 2nd floor onwards if no lift)
+            let floorExtra = 0;
+            if (serviceCat !== 'vehicle') {
+                let pFloor = parseInt(document.getElementById('pickupFloor').value) || 0;
+                let dFloor = parseInt(document.getElementById('dropFloor').value) || 0;
+                let pLift = document.getElementById('pickupLift').checked;
+                let dLift = document.getElementById('dropLift').checked;
 
-    if (km <= 10) {
-        // Local shifting within city (upto 10 KM)
-        finalCost = base;
-    } else {
-        // Intercity / Extra KM rate (e.g., ₹30 to ₹50 extra per KM depending on vehicle/load size)
-        let ratePerKm = 35;
-        if (moveType === '3bhk' || moveType === 'office') ratePerKm = 55;
-        if (moveType === 'vehicle') ratePerKm = 25;
+                // 0 (Ground) aur 1 (1st Floor) par koi labor extra charge nahi lagega
+                // 2nd floor ya usse upar hone par (aur lift na ho) tabhi charge count hoga
+                let pEffort = (pLift || pFloor <= 1) ? 0 : (pFloor - 1);
+                let dEffort = (dLift || dFloor <= 1) ? 0 : (dFloor - 1);
 
-        finalCost = base + (km * ratePerKm);
-    }
+                floorExtra = (pEffort + dEffort) * 400; // ₹400 extra per floor level from 2nd floor onwards
+            }
 
-    const minCost = Math.round(finalCost);
-    const maxCost = Math.round(finalCost * 1.20); // 20% buffer range
+            // Distance calculation
+            let ratePerKm = 35;
+            if (serviceCat === 'office' || moveType === '3bhk') ratePerKm = 55;
+            if (serviceCat === 'vehicle') ratePerKm = 25;
 
-    priceVal.innerText = `₹ ${minCost.toLocaleString('en-IN')} - ₹ ${maxCost.toLocaleString('en-IN')}`;
-    resultBox.classList.remove('hidden');
-    waBtn.classList.remove('hidden');
+            let distanceCost = (km <= 5) ? 0 : (km * ratePerKm);
 
-    const waMsg = `Hi Willkommen Packers Hisar, I want to book relocation for ${moveType} for ${km} KM distance. Estimated budget: ₹${minCost.toLocaleString('en-IN')} - ₹${maxCost.toLocaleString('en-IN')}`;
-    waBtn.href = `https://wa.me/918073025732?text=${encodeURIComponent(waMsg)}`;
-}
+            // 2% Transit Insurance Calculation on declared value
+            let goodsValue = parseFloat(document.getElementById('goodsValue').value) || 0;
+            let insuranceCharge = goodsValue * 0.02;
+
+            let finalCost = base + floorExtra + distanceCost + insuranceCharge;
+
+            const minCost = Math.round(finalCost);
+            const maxCost = Math.round(finalCost * 1.15); // 15% range buffer
+
+            priceVal.innerText = `₹ ${minCost.toLocaleString('en-IN')} - ₹ ${maxCost.toLocaleString('en-IN')}`;
+            resultBox.classList.remove('hidden');
+            waBtn.classList.remove('hidden');
+
+            const waMsg = `Hi Willkommen Packers Hisar, I want to book ${serviceCat} service for ${km} KM distance. Estimated budget: ₹${minCost.toLocaleString('en-IN')} - ₹${maxCost.toLocaleString('en-IN')}`;
+            waBtn.href = `https://wa.me/918073025732?text=${encodeURIComponent(waMsg)}`;
+        }
     </script>
 </body>
 </html>
